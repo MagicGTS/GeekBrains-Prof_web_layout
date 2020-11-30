@@ -5,3 +5,45 @@
 body {
     margin: 0;
 }
+
+.wrap {
+    width: 1140px;
+    margin: 0 auto;
+    outline: 1px solid red;
+
+}
+
+.header-wrap {
+
+    display: flex;
+    justify-content: space-between;
+}
+
+.nav-wrap {}
+
+.main-nav {
+
+    display: flex;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+}
+
+.header {
+    background-color: #eee;
+}
+
+.logo {
+    background-color: gold;
+    margin-right: 38px;
+}
+
+.search {
+    background-color: green;
+    flex-grow: 1;
+}
+
+.account {
+    background-color: red;
+}
