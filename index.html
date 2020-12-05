@@ -7,8 +7,7 @@
     <!-- Required meta tags -->
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
-    <!-- Bootstrap 4.4.1 CSS -->
-    <link rel="stylesheet" href="css/bootstrap.min.css">
+
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
@@ -16,30 +15,33 @@
 </head>
 
 <body>
-    <div class="header">
+    <header class="header">
         <div class="wrap header-wrap">
-            <div class="logo"><img src="img/logo.png" alt=""></div>
-            <div class="brand"><span>BRAN</span><span>D</span></div>
-            <div class="search"><span class="x-split-button">
-                    <button class="x-button x-button-main">Browse</button>
-                    <button class="x-button x-button-drop">&#9660;</button>
-                    <ul class="x-button-drop-menu">
-                        <li>
-                            <a href="#">Item - 1</a>
-                        </li>
-                        <li>
-                            <a href="">Item - 2</a>
-                        </li>
-                        <li>
-                            <a href="">Long Item - 3</a>
-                        </li>
-                    </ul>
-                </span>
+            <div class="logo"><a href=""><img src="img/logo.png" alt=""><span>BRAN<span>D</span></span></a></div>
+            <div class="search">
+                <button class="button-cls">Browse</button>
+                <div class="dd-cls">
+                    <button class="button-cls-split">
+                        <i class="fa fa-caret-down"></i>
+                    </button>
+                    <div class="dd-cont-cls">
+                        <a href="#">jQuery Tutorials</a>
+                        <a href="#">Bootstrap Tutorials</a>
+                        <a href="#">PHP Tutorials</a>
+                        <a href="#">Java Tutorials</a>
+                        <a href="#">Python Tutorials</a>
+                    </div>
+                </div>
+                <form class="example" action="action_page.php">
+                    <input type="text" placeholder="Search for Item..." name="search">
+                    <button type="submit"><i class="fa fa-search"></i></button>
+                </form>
+
 
             </div>
-            <div class="account"><img src="img/cart.png" alt=""><span>account</span></div>
+            <div class="account"><img src="img/cart.png" alt=""><span>My Account</span></div>
         </div>
-        <div class="wrap nav-wrap">
+        <nav class="wrap nav-wrap">
             <ul class="main-nav">
                 <li class="nav-item"><a href="" class="nav-link">home</a></li>
                 <li class="nav-item"><a href="" class="nav-link">man</a></li>
@@ -49,6 +51,6 @@
                 <li class="nav-item"><a href="" class="nav-link">featured</a></li>
                 <li class="nav-item"><a href="" class="nav-link">hot deals</a></li>
             </ul>
-        </div>
-    </div>
+        </nav>
+    </header>
 </body></html>
