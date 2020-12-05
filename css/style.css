@@ -10,8 +10,13 @@ body {
 .wrap {
     width: 1140px;
     margin: 0 auto;
-    outline: 1px solid red;
+    /*outline: 1px solid red;*/
 
+}
+
+
+.header hr {
+    border: 1px solid #ececec;
 }
 
 .header-wrap {
@@ -28,8 +33,22 @@ body {
     display: flex;
     justify-content: center;
     margin: 0;
-    padding: 0;
+    padding: 20px;
     list-style: none;
+
+}
+
+.nav-item {
+    margin: 0 20px;
+}
+
+.nav-link {
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 26px;
+    font-weight: 700;
+    text-transform: uppercase;
+    color: #222222;
 }
 
 .header {
@@ -57,6 +76,11 @@ body {
     letter-spacing: 0.025em;
     color: #222222;
     text-decoration: none;
+    display: flex;
+}
+
+.logo * {
+    align-self: center;
 }
 
 .logo a > span {
@@ -72,9 +96,6 @@ body {
     flex-grow: 1;
 }
 
-.account {
-    background-color: red;
-}
 
 /* Dropdown Button */
 .button-cls {
@@ -92,6 +113,7 @@ body {
     border-color: #e6e6e6;
     border-width: 1px 0px 1px 1px;
     border-radius: 3px 0px 0px 3px;
+    padding: 6px 6px 6px 6px;
 }
 
 .button-cls-split {
@@ -110,6 +132,7 @@ body {
     border-color: #e6e6e6;
     border-width: 1px 0px 1px 0px;
     border-radius: 0;
+    padding: 6px 6px 6px 6px;
 }
 
 .dd-cls {
@@ -152,7 +175,7 @@ body {
 }
 
 /* Style the search field */
-form.example input[type=text] {
+form.frm__search input[type=text] {
     font-size: 14px;
     line-height: 32px;
     font-weight: 300;
@@ -164,10 +187,11 @@ form.example input[type=text] {
     border-radius: 0;
     float: left;
     width: 80%;
+    padding: 6px 6px 6px 6px;
 }
 
 /* Style the submit button */
-form.example button {
+form.frm__search button {
     float: left;
     width: 20%;
     color: #a4a4a4;
@@ -178,15 +202,62 @@ form.example button {
     border-left: none;
     /* Prevent double borders */
     cursor: pointer;
+    padding: 6px 6px 6px 6px;
 }
 
-form.example button:hover {
+form.frm__search button:hover {
     background: #0b7dda;
 }
 
 /* Clear floats */
-form.example::after {
+form.frm__search::after {
     content: "";
     clear: both;
     display: table;
+}
+
+.account .button-cls {
+    font-size: 15px;
+    line-height: 32px;
+    font-weight: 400;
+    letter-spacing: 0.025em;
+    color: #ffffff;
+    background-color: #f16d7f;
+    background-image: none;
+    margin-left: 13px;
+}
+
+.account .button-cls-split {
+    font-size: 14px;
+    line-height: 32px;
+    font-weight: 400;
+    letter-spacing: 0.025em;
+    color: #ffffff;
+    background-color: #f16d7f;
+    background-image: none;
+}
+
+.slider {
+    height: 613px;
+    padding-top: 224px;
+    background: url(../img/image_frame_84.png) center center/cover no-repeat;
+    background-color: #e8e8e8;
+}
+
+.slider > div > h1 {
+    line-height: 1.2;
+    letter-spacing: 0.025em;
+    color: #222222;
+    font-size: 40px;
+    width: 50%;
+    padding-left: 12px;
+    border-left: 12px solid #f16d7f;
+}
+
+.slider > div > h1 > span:first-child {
+    font-size: 60px;
+}
+
+.slider > div > h1 > span:last-child {
+    color: #f16d7f;
 }
