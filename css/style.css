@@ -100,7 +100,7 @@ body {
 /* Dropdown Button */
 .button-cls {
     font-size: 14px;
-    line-height: 32px;
+    line-height: 38px;
     font-weight: 300;
     letter-spacing: 0.025em;
     color: #222222;
@@ -113,13 +113,13 @@ body {
     border-color: #e6e6e6;
     border-width: 1px 0px 1px 1px;
     border-radius: 3px 0px 0px 3px;
-    padding: 6px 6px 6px 6px;
+    padding: 0px 6px 0px 16px;
 }
 
 .button-cls-split {
 
     font-size: 14px;
-    line-height: 32px;
+    line-height: 38px;
     font-weight: 300;
     letter-spacing: 0.025em;
     color: #222222;
@@ -132,7 +132,7 @@ body {
     border-color: #e6e6e6;
     border-width: 1px 0px 1px 0px;
     border-radius: 0;
-    padding: 6px 6px 6px 6px;
+    padding: 0px 10px 0px 6px;
 }
 
 .dd-cls {
@@ -151,10 +151,35 @@ body {
 .dd-cont-cls {
     display: none;
     position: absolute;
-    background-color: #F9DBDE;
-    min-width: 160px;
+    background-color: #fff;
+    min-width: 262px;
     z-index: 1;
+    border-radius: 5px;
+    padding: 25px;
+}
 
+.dd-cont-cls h3 {
+    font-size: 14px;
+    line-height: 32px;
+    font-weight: 400;
+    text-transform: uppercase;
+    letter-spacing: 0.025em;
+    color: #232323;
+}
+
+.dd-cont-cls .browse-nav {
+    list-style: none;
+    padding: 0;
+}
+
+.dd-cont-cls .browse-nav .browse-link {
+    text-decoration: none;
+    font-size: 14px;
+    line-height: 28px;
+    font-weight: 400;
+    letter-spacing: 0.025em;
+    color: #4f4f4f;
+    padding: 0;
 }
 
 .dd-cont-cls a {
@@ -177,7 +202,7 @@ body {
 /* Style the search field */
 form.frm__search input[type=text] {
     font-size: 14px;
-    line-height: 32px;
+    line-height: 38px;
     font-weight: 300;
     letter-spacing: 0.025em;
     color: #a4a4a4;
@@ -187,7 +212,7 @@ form.frm__search input[type=text] {
     border-radius: 0;
     float: left;
     width: 80%;
-    padding: 6px 6px 6px 6px;
+    padding: 0px 6px 0px 6px;
 }
 
 /* Style the submit button */
@@ -202,7 +227,7 @@ form.frm__search button {
     border-left: none;
     /* Prevent double borders */
     cursor: pointer;
-    padding: 6px 6px 6px 6px;
+    padding: 0px 6px 0px 6px;
 }
 
 form.frm__search button:hover {
@@ -594,7 +619,7 @@ form.frm__subscribe {
 }
 
 /* Style the search field */
-form.frm__subscribe input[type=text] {
+form.frm__subscribe input[type=email] {
     font-size: 14px;
     line-height: 32px;
     font-weight: 400;
@@ -636,4 +661,120 @@ form.frm__subscribe::after {
     content: "";
     clear: both;
     display: table;
+}
+
+.copyright .cont {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-height: 79px;
+}
+
+.copyright .cont > * {
+    margin: 0 16px;
+}
+
+.copyright {
+
+    background-color: #e6e6e6;
+}
+
+.copyright .icon-nav {
+    list-style: none;
+    display: flex;
+    justify-content: flex-start;
+    padding: 0;
+}
+
+.copyright .icon-nav-item {
+    background-color: #ffffff;
+    min-width: 32px;
+    min-height: 32px;
+    margin: 0 10px 0 0;
+    text-align: center;
+}
+
+.copyright .text {
+    font-size: 16px;
+    line-height: 42px;
+    font-weight: 400;
+    letter-spacing: 0.025em;
+    color: #7a7a7a;
+}
+
+.copyright .icon-nav-item-active {
+    background-color: #f16d7f;
+}
+
+.copyright .icon-nav-item-active a {
+
+    color: #f7f7f8;
+}
+
+.copyright .icon-nav-item-disabled {
+
+    background-color: #fff;
+
+}
+
+.copyright .icon-nav-item-disabled {
+    opacity: 0.29;
+}
+
+.copyright .icon-nav-item-disabled a {
+    color: #b2b2b2;
+}
+
+.copyright .icon-nav-link {
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 32px;
+    font-weight: 400;
+    letter-spacing: 0.025em;
+    color: #b2b2b2;
+}
+
+.footer .cont {
+    display: flex;
+    padding: 110px 0 85px 0;
+}
+
+.footer .footer-wrap .cont .logo {
+    min-width: 430px;
+    margin-right: 90px;
+}
+
+.footer .cont .logo p {
+    font-size: 14px;
+    line-height: 24px;
+    font-weight: 300;
+    letter-spacing: 0.025em;
+    color: #898989;
+}
+
+.footer .cont .col {
+    margin: 0 15px;
+    min-width: 15%;
+}
+
+.footer .cont .col h2 {
+    font-size: 18px;
+    line-height: 26px;
+    font-weight: 700;
+    letter-spacing: 0.025em;
+    color: #f16d7f;
+}
+
+.footer .footer-nav {
+    list-style: none;
+    padding: 0;
+}
+
+.footer .footer-nav-link {
+    text-decoration: none;
+    font-size: 16px;
+    line-height: 59px;
+    font-weight: 400;
+    letter-spacing: 0.025em;
+    color: #898989;
 }
