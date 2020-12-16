@@ -20,6 +20,8 @@
 @colorSpacer: #ececec;
 @colorBorder: #d6d6d6;
 @colorInput: #e1e1e1;
+@colorStarts: #e4af48;
+@colorX: #c0c0c0;
 @buttonGradient: linear-gradient(180.0deg, #f9f9f9 0%, #f5f5f5 100%);
 @textBaseSize: 14px;
 @textBaseLineHeight: 24px;
@@ -109,16 +111,87 @@ body {
 .nav {
     &-item {
         margin: 0 20px;
+
+        &:hover &-ddc {
+            display: flex;
+        }
+
+        &:hover .nav-link {
+            background-color: @colorHighLights;
+            color: @colorHighLightsInvert;
+        }
+
+        &-ddc {
+            display: none;
+            position: absolute;
+            background-color: @colorHighLightsInvert;
+            z-index: 1;
+            min-width: 846px;
+            min-height: 310px;
+            border-radius: 5px;
+
+            & .col {
+                display: flex;
+
+                &:last-child {
+                    flex-wrap: wrap;
+                }
+            }
+
+            &-item {
+                min-width: 235px;
+                padding: 20px 23px;
+            }
+
+            & h3 {
+                /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
+                .fonts(14px; 32px; 400);
+                text-transform: uppercase;
+                color: @colorHighLightsThird;
+                margin: 0;
+                border-bottom: 1px solid @colorBackGroundThird;
+            }
+
+            & .browse-nav {
+                list-style: none;
+                padding: 0;
+                margin: 16px 0;
+            }
+
+            & .browse-nav .browse-link {
+                text-decoration: none;
+                /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
+                .fonts(@lHeight: 28px);
+                color: @colorHighLightsFourth;
+                padding: 0;
+            }
+
+
+            & a {
+
+                display: block;
+            }
+
+            & a:hover {
+                background-color: @colorBackGroundThird;
+
+            }
+        }
     }
+
 
     &-link {
         text-decoration: none;
-        font-size: 14px;
-        line-height: 26px;
-        font-weight: 700;
+        /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
+        .fonts(@lHeight: 26px; @weight: 700; @ls: normal);
         text-transform: uppercase;
         color: @colorHighLights;
+        position: relative;
+
     }
+
+
+
 }
 
 
@@ -128,11 +201,10 @@ body {
     justify-content: space-between;
 
     & a {
-        font-size: 27px;
-        line-height: 32px;
-        font-weight: 300;
+
+        /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
+        .fonts(27px; 32px; 300);
         text-transform: uppercase;
-        letter-spacing: 0.025em;
         color: @colorHighLights;
         text-decoration: none;
         display: flex;
@@ -155,7 +227,43 @@ body {
 .btn {
     position: relative;
 
+    & button {
+        cursor: pointer;
+    }
+
+
     /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
+    &:hover &-decor-def {
+        background-image: none;
+    }
+
+    &:hover &-decor-brand {
+        background-color: @colorHighLightsInvert;
+        color: @colorHighLights;
+        outline: 1px solid @colorBackGroundSecond;
+        transition-duration: 100ms;
+
+        & span {
+            background-color: @colorHighLightsInvert;
+            color: @colorHighLights;
+
+        }
+    }
+
+
+    &:hover &-decor-bap {
+        background-color: @colorHighLightsInvert;
+        color: @colorHighLights;
+        outline: 1px solid @colorBackGroundSecond;
+        transition-duration: 100ms;
+
+        & span {
+            background-color: @colorHighLightsInvert;
+            color: @colorHighLights;
+
+        }
+    }
+
     &-decor {
         &-def {
             padding: 0;
@@ -163,6 +271,8 @@ body {
 
             background-color: @colorBackGroundSecond;
             background-image: @buttonGradient;
+
+
         }
 
         &-brand {
@@ -239,41 +349,39 @@ body {
         background-color: @colorHighLightsInvert;
         z-index: 1;
         min-width: 262px;
+        padding: 16px;
+        border-radius: 5px;
 
         & h3 {
-            font-size: 14px;
-            line-height: 32px;
-            font-weight: 400;
+            /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
+            .fonts(14px; 32px; 400);
             text-transform: uppercase;
-            letter-spacing: 0.025em;
             color: @colorHighLightsThird;
+            margin: 0;
+            border-bottom: 1px solid @colorBackGroundThird;
         }
 
         & .browse-nav {
             list-style: none;
             padding: 0;
+            margin: 16px 0;
         }
 
         & .browse-nav .browse-link {
             text-decoration: none;
-            font-size: 14px;
-            line-height: 28px;
-            font-weight: 400;
-            letter-spacing: 0.025em;
+            /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
+            .fonts(@lHeight: 28px);
             color: @colorHighLightsFourth;
             padding: 0;
         }
 
         & a {
-            color: #A51D2B;
-            padding: 12px 16px;
-            text-decoration: none;
+
             display: block;
         }
 
         & a:hover {
-            background-color: #A51D2B;
-            color: @colorHighLightsInvert;
+            background-color: @colorBackGroundThird;
 
         }
     }
@@ -323,6 +431,21 @@ body {
         &-btn {
             width: 20%;
             color: @colorFadeOut;
+            background-color: @colorHighLightsInvert;
+
+            &:active {
+                opacity: 0.29;
+                transition-duration: 100ms;
+                background-color: @colorHighLightsInvert;
+            }
+
+            &:hover {
+                opacity: 0.29;
+                transition-duration: 200ms;
+                background-color: @colorFadeOut;
+                color: @colorHighLightsInvert;
+            }
+
         }
 
         &-borders {
@@ -363,6 +486,19 @@ body {
             width: 35%;
             color: @colorHighLightsInvert;
             background-color: @colorBrand;
+
+
+            &:active {
+                color: @colorHighLights;
+                transition-duration: 100ms;
+                background-color: @colorHighLightsInvert;
+            }
+
+            &:hover {
+                transition-duration: 200ms;
+                background-color: @colorFadeOut;
+                color: @colorHighLights;
+            }
         }
 
         &-borders {
@@ -377,18 +513,86 @@ body {
 
 
 .account {
-    & img {
-        margin-right: 13px;
+    .cart {
+        margin-right: 10px;
+        padding: 3px;
+        position: relative;
+
+        &:hover {
+            background-color: @colorBackGroundThird;
+        }
+
+        &:hover .cart-ddc {
+            display: flex;
+        }
+
+        &-ddc {
+            display: none;
+            flex-direction: column;
+            position: absolute;
+            background-color: @colorHighLightsInvert;
+            z-index: 1;
+            padding: 20px;
+            border-radius: 5px;
+
+            & .cart-list {
+                list-style: none;
+                padding: 0;
+                margin: 16px 0;
+                min-width: 262px;
+
+                & .cart-item {
+                    display: flex;
+                    align-items: center;
+                    border-bottom: 1px solid @colorBackGroundThird;
+                    .fonts(12px; 1.2; 700; normal);
+                    text-transform: uppercase;
+                    color: @colorHighLights;
+                    margin-bottom: 20px;
+
+                    & .col p {
+                        margin: 10px;
+
+                        & .sm-text {
+                            font-size: 10px;
+                        }
+                    }
+
+                    & .col:nth-child(2) {
+                        flex-grow: 1;
+
+                        & p:nth-child(2) {
+                            color: @colorStarts;
+                        }
+
+                        & p:last-child {
+                            color: @colorBrand;
+                        }
+                    }
+
+                    & .col:last-child {
+                        color: @colorX;
+                    }
+                }
+            }
+
+            & .total {
+                & > p {
+                    text-align: justify;
+                }
+            }
+        }
     }
 
     & .button-cls-split {
-        font-size: 14px;
-        line-height: 32px;
-        font-weight: 400;
-        letter-spacing: 0.025em;
+
+        /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
+        .fonts(@lHeight: 32px);
         color: @colorHighLightsInvert;
         background-color: @colorBrand;
         background-image: none;
+
+
     }
 }
 
@@ -399,10 +603,10 @@ body {
     background-color: @colorBackGroundThird;
 
     & > div > h1 {
-        line-height: 1.2;
-        letter-spacing: 0.025em;
+
+        /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
+        .fonts(40px; 1.2);
         color: @colorHighLights;
-        font-size: 40px;
         width: 50%;
         padding-left: 12px;
         border-left: 12px solid @colorBrand;
@@ -437,11 +641,9 @@ body {
     }
 
     & .item h3 {
-        font-size: 18px;
-        line-height: 1.2;
-        font-weight: 900;
+        /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
+        .fonts(18px; 1.2; 900);
         text-transform: uppercase;
-        letter-spacing: 0.025em;
         color: @colorHighLights;
         display: inline-block;
         padding: 16px;
@@ -459,6 +661,8 @@ body {
 }
 
 .products {
+    margin-bottom: 113px;
+
     & .grid {
         display: flex;
         justify-content: center;
@@ -468,18 +672,17 @@ body {
             padding: 10px;
 
             & h3 {
-                font-size: 13px;
-                line-height: 1.2;
-                font-weight: 400;
+
+                /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
+                .fonts(13px; 1.2; 400; normal);
                 text-transform: uppercase;
                 color: @colorHighLights;
                 margin-left: 15px
             }
 
             & p {
-                font-size: 16px;
-                line-height: 1.2;
-                font-weight: 700;
+                /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
+                .fonts(16px; 1.2; 700; normal);
                 text-transform: uppercase;
                 color: @colorBrand;
                 margin-left: 15px
@@ -500,17 +703,14 @@ body {
         margin-bottom: 50px;
 
         & h2 {
-            font-size: 30px;
-            line-height: 54px;
-            font-weight: 700;
-            letter-spacing: 0.025em;
+            /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
+            .fonts(30px; 54px; 700);
             color: @colorHighLights;
         }
 
         & p {
-            font-size: 14px;
-            font-weight: 400;
-            letter-spacing: 0.025em;
+            /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
+            .fonts(14px; normal);
             color: @colorRegular;
         }
 
@@ -524,20 +724,18 @@ body {
         justify-content: center;
 
         & .button-cls-split {
-            font-size: 15px;
-            line-height: 30px;
-            font-weight: 400;
-            letter-spacing: 0.025em;
+
+            /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
+            .fonts(15px; 30px; );
             color: @colorHighLightsInvert;
             background-color: @colorBrand;
             background-image: none;
         }
 
         & .button-cls {
-            font-size: 16px;
-            line-height: 30px;
-            font-weight: 400;
-            letter-spacing: 0.025em;
+
+            /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
+            .fonts(16px; 30px);
             color: @colorHighLightsInvert;
             background-color: @colorBrand;
             background-image: none;
@@ -547,6 +745,7 @@ body {
 }
 
 .feature {
+
     & > div > div > .col:first-child {
         background-image: url(../img/layer_39_1321.png), url(../img/rectangle_21_copy_1314.png);
         background-position: right;
@@ -554,10 +753,8 @@ body {
         background-size: cover;
 
         & > h2 {
-            font-size: 53.7px;
-            line-height: 0.8;
-            font-weight: 700;
-            letter-spacing: 0.025em;
+            /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
+            .fonts(53.7px; 0.8; 700);
             color: @colorHighLightsInvert;
             margin-top: 146px;
             margin-left: 40px;
@@ -574,7 +771,6 @@ body {
 
     & .banner {
         display: flex;
-        margin-top: 113px;
         margin-bottom: 97px;
 
         & > .col:first-child {
@@ -602,18 +798,14 @@ body {
 
                 & h3 {
                     margin: 0;
-                    font-size: 20px;
-                    line-height: 1.2;
-                    font-weight: 700;
-                    letter-spacing: 0.025em;
+                    /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
+                    .fonts(20px; 1.2; 700);
                     color: @colorHighLightsSecondInvert;
                 }
 
                 & p {
-                    font-size: 14px;
-                    line-height: 24px;
-                    font-weight: 300;
-                    letter-spacing: 0.025em;
+                    /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
+                    .fonts(14px; 24px; 300);
                     color: @colorHighLightsSecondInvert;
                 }
             }
@@ -644,7 +836,7 @@ body {
 
             &:first-child {
                 border-width: 0 1px 0 0px;
-                border-color: #fff;
+                border-color: @colorHighLightsInvert;
                 border-style: solid;
 
                 & > .item {
@@ -664,25 +856,20 @@ body {
 
                         & p {
                             &:first-child {
-                                font-size: 16px;
-                                line-height: 26px;
-                                font-weight: 400;
+                                /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
+                                .fonts(16px; 26px);
                                 font-style: italic;
-                                letter-spacing: 0.025em;
                                 color: #222224;
                             }
 
                             &:nth-child(2) {
-                                font-size: 12px;
-                                line-height: 14px;
-                                font-weight: 300;
+                                /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
+                                .fonts(12px; 14px; 300; normal);
                                 color: #222224;
 
                                 & span {
-                                    font-size: 16px;
-                                    line-height: 26px;
-                                    font-weight: 700;
-                                    letter-spacing: 0.025em;
+                                    /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
+                                    .fonts(16px; 26px; 700);
                                     color: #f16d7f;
                                 }
                             }
@@ -700,11 +887,9 @@ body {
                     flex-direction: column;
 
                     & h3 {
-                        font-size: 14px;
-                        line-height: 24px;
-                        font-weight: 400;
+                        /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
+                        .fonts(14px; 24px);
                         text-transform: uppercase;
-                        letter-spacing: 0.025em;
                         color: @colorHighLightsSecond;
                         text-align: center;
 
@@ -731,6 +916,10 @@ body {
             border-color: @colorBorder;
             min-width: 38px;
             margin: 0 10px 0 0;
+
+            &:hover {
+                border-color: @colorHighLightsSecond;
+            }
 
             &-active {
                 border-color: @colorBrand;
@@ -777,9 +966,11 @@ body {
             min-height: 32px;
             margin: 0 10px 0 0;
             text-align: center;
+            transition-duration: 300ms;
 
-            &-active {
+            &:hover {
                 background-color: @colorBrand;
+                transition-duration: 200ms;
 
                 & a {
 
@@ -787,10 +978,11 @@ body {
                 }
             }
 
-            &-disabled {
+            &:active {
 
                 background-color: @colorHighLightsInvert;
                 opacity: 0.29;
+                transition-duration: 100ms;
 
                 & a {
                     color: @colorPicts;
@@ -800,20 +992,16 @@ body {
 
         &-link {
             text-decoration: none;
-            font-size: 16px;
-            line-height: 32px;
-            font-weight: 400;
-            letter-spacing: 0.025em;
+            /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
+            .fonts(15px; 32px);
             color: @colorPicts;
         }
 
     }
 
     & .text {
-        font-size: 16px;
-        line-height: 42px;
-        font-weight: 400;
-        letter-spacing: 0.025em;
+        /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
+        .fonts(15px; 42px);
         color: @colorRegularThird;
     }
 }
@@ -829,10 +1017,8 @@ body {
         padding: 110px 0 85px 0;
 
         & .logo p {
-            font-size: 14px;
-            line-height: 24px;
-            font-weight: 300;
-            letter-spacing: 0.025em;
+            /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
+            .fonts(14px; 24px; 300);
             color: @colorRegularSecond;
         }
 
@@ -841,10 +1027,8 @@ body {
             min-width: 15%;
 
             & h2 {
-                font-size: 18px;
-                line-height: 26px;
-                font-weight: 700;
-                letter-spacing: 0.025em;
+                /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
+                .fonts(18px; 26px; 700);
                 color: @colorBrand;
             }
         }
@@ -856,11 +1040,15 @@ body {
 
         &-link {
             text-decoration: none;
-            font-size: 16px;
-            line-height: 40px;
-            font-weight: 400;
-            letter-spacing: 0.025em;
+            /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
+            .fonts(16px; 40px);
             color: @colorRegularSecond;
+            display: block;
+
+            &:hover {
+                color: @colorHighLightsSecond;
+                background-color: @colorSpacer;
+            }
         }
     }
 
