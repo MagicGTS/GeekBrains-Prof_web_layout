@@ -446,6 +446,10 @@ body {
 .account .cart-ddc .cart-list .cart-item .col:last-child {
   color: #c0c0c0;
 }
+.account .cart-ddc .total {
+  display: flex;
+  flex-direction: column;
+}
 .account .cart-ddc .total > p {
   text-align: justify;
 }
