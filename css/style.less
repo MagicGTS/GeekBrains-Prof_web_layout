@@ -8,6 +8,8 @@
 @colorHighLightsThird: #232323;
 @colorHighLightsFourth: #4f4f4f;
 @colorHighLightsFith: #838383;
+@colorHighLightsSixth: #4a4a4a;
+@colorHighLightsSixthInvert: #eaeaea;
 @colorRegular: #9f9f9f;
 @colorRegularSecond: #898989;
 @colorRegularThird: #7a7a7a;
@@ -129,6 +131,7 @@ body {
             min-width: 846px;
             min-height: 310px;
             border-radius: 5px;
+            padding: 20px 24px 20px 0;
 
             & .col {
                 display: flex;
@@ -140,7 +143,7 @@ body {
 
             &-item {
                 min-width: 235px;
-                padding: 20px 23px;
+                padding-left: 24px;
             }
 
             & h3 {
@@ -148,14 +151,14 @@ body {
                 .fonts(14px; 32px; 400);
                 text-transform: uppercase;
                 color: @colorHighLightsThird;
-                margin: 0;
+                margin: 0 0 15px 0;
                 border-bottom: 1px solid @colorBackGroundThird;
             }
 
             & .browse-nav {
                 list-style: none;
                 padding: 0;
-                margin: 16px 0;
+                margin: 0 0;
             }
 
             & .browse-nav .browse-link {
@@ -264,6 +267,30 @@ body {
         }
     }
 
+    &:hover &-decor-check {
+        background-color: @colorBrand;
+        color: @colorHighLightsInvert;
+        transition-duration: 100ms;
+
+        & span {
+            background-color: @colorBrand;
+            color: @colorHighLightsInvert;
+
+        }
+    }
+
+    &:hover &-decor-cart {
+        background-color: @colorHighLightsSixth;
+        color: @colorHighLightsSixthInvert;
+        transition-duration: 100ms;
+
+        & span {
+            background-color: @colorHighLightsSixth;
+            color: @colorHighLightsSixthInvert;
+
+        }
+    }
+
     &-decor {
         &-def {
             padding: 0;
@@ -286,19 +313,52 @@ body {
         &-bap {
             padding: 0;
             .fonts(16px; 54px; 700);
+            text-decoration: none;
+            text-align: center;
 
             background-color: @colorBrand;
             background-image: none;
+        }
+
+        &-check {
+            padding: 0;
+            .fonts(14px; 50px; 700; normal);
+            margin-bottom: 10px;
+            text-transform: uppercase;
+            background-color: @colorHighLightsInvert;
+            background-image: none;
+            text-decoration: none;
+            text-align: center;
+        }
+
+        &-cart {
+            padding: 0;
+            .fonts(14px; 50px; 700; normal);
+            text-transform: uppercase;
+            background-color: @colorHighLightsInvert;
+            background-image: none;
+            text-decoration: none;
+            text-align: center;
         }
     }
 
     &-borders {
         .borders(@color: @colorBackGround);
+
+        &-none {
+            border: none;
+        }
+
+        &-check {
+            .borders(@color: @colorBrand; @radius: 0px);
+        }
+
+        &-cart {
+            .borders(@color: @colorHighLightsSixthInvert; @radius: 0px);
+        }
     }
 
-    &-borders-none {
-        border: none;
-    }
+
 
     /* left side connecting */
     &-cls {
@@ -321,6 +381,17 @@ body {
         &-brand {
             padding-left: 20px;
             color: @colorHighLightsInvert;
+        }
+
+
+        &-check {
+            padding-left: 20px;
+            color: @colorBrand;
+        }
+
+        &-cart {
+            padding-left: 20px;
+            color: @colorHighLightsSixth;
         }
     }
 
@@ -530,15 +601,19 @@ body {
             display: none;
             flex-direction: column;
             position: absolute;
+            left: -47px;
             background-color: @colorHighLightsInvert;
             z-index: 1;
             padding: 20px;
             border-radius: 5px;
 
+            & > * {
+                padding: 0 20px;
+            }
+
             & .cart-list {
                 list-style: none;
-                padding: 0;
-                margin: 16px 0;
+                margin: 16px 0px 20px 0px;
                 min-width: 262px;
 
                 & .cart-item {
@@ -548,7 +623,12 @@ body {
                     .fonts(12px; 1.2; 700; normal);
                     text-transform: uppercase;
                     color: @colorHighLights;
-                    margin-bottom: 20px;
+                    padding-bottom: 20px;
+                    cursor: pointer;
+
+                    &:hover {
+                        outline: 1px solid @colorBrand;
+                    }
 
                     & .col p {
                         margin: 10px;
@@ -572,6 +652,10 @@ body {
 
                     & .col:last-child {
                         color: @colorX;
+
+                        &:hover {
+                            color: @colorHighLights;
+                        }
                     }
                 }
             }
@@ -580,8 +664,33 @@ body {
                 display: flex;
                 flex-direction: column;
 
-                & > p {
-                    text-align: justify;
+                & > .summ {
+                    display: flex;
+                    justify-content: space-between;
+                    padding-bottom: 30px;
+
+                    & span {
+                        .fonts(16px; 12px; 700; normal);
+                    }
+
+                    & span:first-child {
+                        text-align: left;
+                    }
+
+                    & span:last-child {
+                        text-align: left;
+                    }
+                }
+
+                & > .btn {
+                    display: flex;
+
+
+
+                    & a {
+                        flex-grow: 1;
+                    }
+
                 }
             }
         }
@@ -672,7 +781,12 @@ body {
         flex-wrap: wrap;
 
         & .item {
-            padding: 10px;
+            padding: 11px;
+
+            & a {
+                text-decoration: none;
+                display: block;
+            }
 
             & h3 {
 
