@@ -1,6 +1,9 @@
 /* Variables */
 /* Colors */
 @colorBrand: #f16d7f;
+@colorBrandSecond: #ef5b70;
+@colorBrandLight: #f8f3f4;
+@colorBrandSecond: #f16d7f;
 @colorHighLights: #222222;
 @colorHighLightsInvert: #fff;
 @colorHighLightsSecond: #222224;
@@ -10,10 +13,12 @@
 @colorHighLightsFith: #838383;
 @colorHighLightsSixth: #4a4a4a;
 @colorHighLightsSixthInvert: #eaeaea;
+@colorHighLightsSeventh: #636363;
 @colorRegular: #9f9f9f;
 @colorRegularSecond: #898989;
 @colorRegularThird: #7a7a7a;
 @colorBackGround: #e6e6e6;
+@colorBackGroundFourth: #6f6e6e;
 @colorBackGroundSecond: #cdcdcc;
 @colorBackGroundThird: #e8e8e8;
 @colorPicts: #b2b2b2;
@@ -104,7 +109,7 @@ body {
         display: flex;
         justify-content: center;
         margin: 0;
-        padding: 20px;
+        padding: 0 20px 0 20px;
         list-style: none;
 
     }
@@ -112,7 +117,7 @@ body {
 
 .nav {
     &-item {
-        margin: 0 20px;
+        padding: 20px 20px;
 
         &:hover &-ddc {
             display: flex;
@@ -121,6 +126,12 @@ body {
         &:hover .nav-link {
             background-color: @colorHighLights;
             color: @colorHighLightsInvert;
+        }
+
+        &-active {
+            border-bottom: 3px;
+            border-bottom-color: @colorBrandSecond;
+            border-bottom-style: solid;
         }
 
         &-ddc {
@@ -436,25 +447,28 @@ body {
             list-style: none;
             padding: 0;
             margin: 16px 0;
+
+            & .browse-link {
+                text-decoration: none;
+                /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
+                .fonts(@lHeight: 28px);
+                color: @colorHighLightsFourth;
+                padding: 0;
+            }
+
+            & a {
+                display: block;
+
+                &:hover {
+                    background-color: @colorBackGroundThird;
+
+                }
+            }
         }
 
-        & .browse-nav .browse-link {
-            text-decoration: none;
-            /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
-            .fonts(@lHeight: 28px);
-            color: @colorHighLightsFourth;
-            padding: 0;
-        }
 
-        & a {
 
-            display: block;
-        }
 
-        & a:hover {
-            background-color: @colorBackGroundThird;
-
-        }
     }
 
     &:hover &-ddc {
@@ -775,6 +789,83 @@ body {
 .products {
     margin-bottom: 113px;
 
+    & .cont {
+        display: flex;
+
+        & .category {
+            min-width: 244px;
+            padding: 0 15px;
+
+            & summary {
+                border-left: 5px solid @colorBrandSecond;
+                border-bottom: 1px solid @colorInput;
+                .fonts(14px; 37px; 700; normal);
+                text-transform: uppercase;
+                color: @colorBackGroundFourth;
+                display: flex;
+                justify-content: space-between;
+                align-items: center;
+                padding-left: 15px;
+
+                &::-webkit-details-marker {
+                    display: none;
+                }
+
+                &::after {
+                    content: "\f0d7";
+                    font: normal normal normal 14px/1 FontAwesome;
+
+                }
+
+                &:focus {
+                    outline: none;
+                }
+            }
+
+            details {
+
+                margin-bottom: 18px;
+
+                &[open] {
+                    & summary {
+                        color: @colorBrandSecond;
+
+                        &::after {
+                            content: "\f0d7";
+                            transform: rotate(180deg);
+                        }
+                    }
+                }
+
+                & .nav-cat {
+                    list-style: none;
+                    padding: 0;
+                    margin: 16px 12px;
+
+                    & .nav-cat-link {
+                        text-decoration: none;
+                        /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
+                        .fonts(@lHeight: 33px; @ls: normal);
+                        color: @colorHighLightsFourth;
+                        padding: 0;
+                    }
+
+                    & a {
+                        display: block;
+
+                        &:hover {
+                            background-color: @colorBackGroundThird;
+
+                        }
+                    }
+                }
+            }
+
+            & .nav-cat {}
+        }
+
+    }
+
     & .grid {
         display: flex;
         justify-content: center;
@@ -806,6 +897,7 @@ body {
             }
         }
     }
+
 
 
     & > div {
@@ -857,6 +949,82 @@ body {
             background-color: @colorBrand;
             background-image: none;
             margin-left: 13px;
+        }
+    }
+}
+
+.top-ribbon {
+    background-color: @colorBrandLight;
+    text-transform: uppercase;
+    margin-bottom: 88px;
+
+    &-wrap {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        padding: 46px 15px;
+
+        & h1 {
+            .fonts(24px; 24px; 900; normal);
+            color: @colorBrand;
+        }
+
+        & .breadcrumbs {
+            .fonts(14px; 20px; 300; normal);
+            color: @colorHighLightsSeventh;
+
+            & .current {
+                color: @colorBrand;
+                font-weight: 700;
+            }
+
+            & * {
+                .fonts(14px; 20px; 300; normal);
+            }
+        }
+
+        & a {
+            text-decoration: none;
+        }
+    }
+}
+
+.bottom-ribbon {
+    background-color: @colorHighLightsSecond;
+
+    &-wrap {
+        display: flex;
+        align-items: flex-start;
+        min-width: 374px;
+        padding: 60px 0px;
+
+        & > .item {
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+            margin: 25px;
+
+            & img {
+                align-self: center;
+                margin: 0 28px 30px 0;
+            }
+
+            & .cont {
+                text-align: center;
+            }
+
+            & h3 {
+                margin: 0 0 10px 0;
+                /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
+                .fonts(20px; 1.2; 700);
+                color: @colorHighLightsSecondInvert;
+            }
+
+            & p {
+                /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
+                .fonts(14px; 24px; 300);
+                color: @colorHighLightsSecondInvert;
+            }
         }
     }
 }

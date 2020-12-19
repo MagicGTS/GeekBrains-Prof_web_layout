@@ -37,11 +37,11 @@ body {
   display: flex;
   justify-content: center;
   margin: 0;
-  padding: 20px;
+  padding: 0 20px 0 20px;
   list-style: none;
 }
 .nav-item {
-  margin: 0 20px;
+  padding: 20px 20px;
 }
 .nav-item:hover .nav-item-ddc {
   display: flex;
@@ -49,6 +49,11 @@ body {
 .nav-item:hover .nav-link {
   background-color: #222222;
   color: #fff;
+}
+.nav-item-active {
+  border-bottom: 3px;
+  border-bottom-color: #f16d7f;
+  border-bottom-style: solid;
 }
 .nav-item-ddc {
   display: none;
@@ -338,10 +343,10 @@ body {
   color: #4f4f4f;
   padding: 0;
 }
-.btn-ddc a {
+.btn-ddc .browse-nav a {
   display: block;
 }
-.btn-ddc a:hover {
+.btn-ddc .browse-nav a:hover {
   background-color: #e8e8e8;
 }
 .btn:hover .btn-ddc {
@@ -620,6 +625,68 @@ body {
 .products {
   margin-bottom: 113px;
 }
+.products .cont {
+  display: flex;
+}
+.products .cont .category {
+  min-width: 244px;
+  padding: 0 15px;
+}
+.products .cont .category summary {
+  border-left: 5px solid #f16d7f;
+  border-bottom: 1px solid #e1e1e1;
+  font-size: 14px;
+  line-height: 37px;
+  font-weight: 700;
+  letter-spacing: normal;
+  text-transform: uppercase;
+  color: #6f6e6e;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-left: 15px;
+}
+.products .cont .category summary::-webkit-details-marker {
+  display: none;
+}
+.products .cont .category summary::after {
+  content: "\f0d7";
+  font: normal normal normal 14px/1 FontAwesome;
+}
+.products .cont .category summary:focus {
+  outline: none;
+}
+.products .cont .category details {
+  margin-bottom: 18px;
+}
+.products .cont .category details[open] summary {
+  color: #f16d7f;
+}
+.products .cont .category details[open] summary::after {
+  content: "\f0d7";
+  transform: rotate(180deg);
+}
+.products .cont .category details .nav-cat {
+  list-style: none;
+  padding: 0;
+  margin: 16px 12px;
+}
+.products .cont .category details .nav-cat .nav-cat-link {
+  text-decoration: none;
+  /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
+  font-size: 14px;
+  line-height: 33px;
+  font-weight: 400;
+  letter-spacing: normal;
+  color: #4f4f4f;
+  padding: 0;
+}
+.products .cont .category details .nav-cat a {
+  display: block;
+}
+.products .cont .category details .nav-cat a:hover {
+  background-color: #e8e8e8;
+}
 .products .grid {
   display: flex;
   justify-content: center;
@@ -705,6 +772,83 @@ body {
   background-color: #f16d7f;
   background-image: none;
   margin-left: 13px;
+}
+.top-ribbon {
+  background-color: #f8f3f4;
+  text-transform: uppercase;
+  margin-bottom: 88px;
+}
+.top-ribbon-wrap {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 46px 15px;
+}
+.top-ribbon-wrap h1 {
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: 900;
+  letter-spacing: normal;
+  color: #f16d7f;
+}
+.top-ribbon-wrap .breadcrumbs {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 300;
+  letter-spacing: normal;
+  color: #636363;
+}
+.top-ribbon-wrap .breadcrumbs .current {
+  color: #f16d7f;
+  font-weight: 700;
+}
+.top-ribbon-wrap .breadcrumbs * {
+  font-size: 14px;
+  line-height: 20px;
+  font-weight: 300;
+  letter-spacing: normal;
+}
+.top-ribbon-wrap a {
+  text-decoration: none;
+}
+.bottom-ribbon {
+  background-color: #222224;
+}
+.bottom-ribbon-wrap {
+  display: flex;
+  align-items: flex-start;
+  min-width: 374px;
+  padding: 60px 0px;
+}
+.bottom-ribbon-wrap > .item {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  margin: 25px;
+}
+.bottom-ribbon-wrap > .item img {
+  align-self: center;
+  margin: 0 28px 30px 0;
+}
+.bottom-ribbon-wrap > .item .cont {
+  text-align: center;
+}
+.bottom-ribbon-wrap > .item h3 {
+  margin: 0 0 10px 0;
+  /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
+  font-size: 20px;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: 0.025em;
+  color: #fbfbfb;
+}
+.bottom-ribbon-wrap > .item p {
+  /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 300;
+  letter-spacing: 0.025em;
+  color: #fbfbfb;
 }
 .feature > div > div > .col:first-child {
   background-image: url(../img/layer_39_1321.png), url(../img/rectangle_21_copy_1314.png);
