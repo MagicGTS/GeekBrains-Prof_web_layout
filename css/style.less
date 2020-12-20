@@ -23,12 +23,15 @@
 @colorBackGroundThird: #e8e8e8;
 @colorBackGroundThith: #f3f3f3;
 @colorBackGroundSixth: #ebebeb;
+@colorBackGroundSeventh: #aaaaaa;
+@colorBackGroundEighth: #dfdfdf;
 @colorPicts: #b2b2b2;
 @colorPictsActive: #f7f7f8;
 @colorFadeOut: #a4a4a4;
 @colorSpacer: #ececec;
 @colorBorder: #d6d6d6;
 @colorInput: #e1e1e1;
+@colorInputSecond: #f0f0f0;
 @colorStarts: #e4af48;
 @colorX: #c0c0c0;
 @buttonGradient: linear-gradient(180.0deg, #f9f9f9 0%, #f5f5f5 100%);
@@ -59,6 +62,96 @@
 .bordersNoRadiusSide(@side1; @side2) {
     border-@{side1}-radius: 0 !important;
     border-@{side2}-radius: 0 !important;
+}
+
+.thumb(@input-height; @input-border-radius; @input-thumb-color) {
+    width: @input-height+8px;
+    height: @input-height+8px;
+    border: none;
+    pointer-events: auto;
+    border-radius: @input-border-radius;
+    background-color: @input-thumb-color;
+    cursor: pointer;
+    position: relative;
+    z-index: 1;
+}
+
+.range-slider(@width; @height; @input-top; @input-bg-color; @input-thumb-color; @float: none; @input-height: 20px; @input-border-radius: 14px; @bubble-width: 100px) {
+    position: relative;
+    width: @width;
+    margin-left: (100% - @width) / 2;
+    height: @height;
+    float: @float;
+    text-align: center;
+
+    input[type='range'] {
+        -webkit-appearance: none;
+        height: @input-height;
+        pointer-events: none;
+        padding: 0;
+        position: absolute;
+        left: 0;
+        top: @input-top;
+        height: @input-height;
+        width: 100%;
+        border-radius: @input-border-radius;
+        border: 1px solid @input-bg-color;
+        background: @input-bg-color;
+
+        &:focus,
+        &:active {
+            outline: none;
+        }
+
+        &::-webkit-slider-thumb {
+            -webkit-appearance: none;
+            box-sizing: content-box;
+            .thumb(@input-height; @input-border-radius; @input-thumb-color);
+        }
+
+        &::-moz-range-thumb {
+            .thumb(@input-height; @input-border-radius; @input-thumb-color);
+        }
+
+        &::-ms-thumb {
+            .thumb(@input-height; @input-border-radius; @input-thumb-color);
+        }
+
+        &::-webkit-slider-runnable-track {
+            /* your track styles */
+            color: blue;
+            -webkit-appearance: none;
+
+            &:after {
+                color: aqua;
+            }
+        }
+
+        &::-moz-range-track {
+            -moz-appearance: none;
+            background: none;
+        }
+
+        &::-ms-track {
+            /* should come after -webkit- */
+            border-color: transparent;
+            color: transparent;
+            background: transparent;
+            /* again your track styles */
+        }
+
+        &::-ms-fill-upper {
+            background: transparent;
+        }
+
+        &::-ms-fill-lower {
+            background: transparent;
+        }
+
+        &::-ms-tooltip {
+            display: none;
+        }
+    }
 }
 
 * {
@@ -292,6 +385,18 @@ body {
         }
     }
 
+    &:hover &-decor-view {
+        background-color: @colorBrand;
+        color: @colorHighLightsInvert;
+        transition-duration: 100ms;
+
+        & span {
+            background-color: @colorBrand;
+            color: @colorHighLightsInvert;
+
+        }
+    }
+
     &:hover &-decor-cart {
         background-color: @colorHighLightsSixth;
         color: @colorHighLightsSixthInvert;
@@ -353,6 +458,16 @@ body {
             text-decoration: none;
             text-align: center;
         }
+
+        &-view {
+            padding: 15px 45px;
+            .fonts(16px; 26px; 300; normal);
+            text-transform: uppercase;
+            background-color: @colorHighLightsInvert;
+            background-image: none;
+            text-decoration: none;
+            text-align: center;
+        }
     }
 
     &-borders {
@@ -364,6 +479,10 @@ body {
 
         &-check {
             .borders(@color: @colorBrand; @radius: 0px);
+        }
+
+        &-view {
+            .borders(@color: @colorBrand; @radius: 3px);
         }
 
         &-cart {
@@ -790,11 +909,11 @@ body {
 
 .products {
     &-wrap {
-        margin: 67px 67px 112px 67px;
+        margin: 67px auto 112px auto;
     }
 
     &-margin {
-        margin: 57px 0 112px 0;
+        margin: 57px auto 112px auto;
     }
 
     & .cont {
@@ -954,8 +1073,178 @@ body {
 
                     background-color: @colorBackGroundThith;
                 }
+
+                & .filter-ribbon {
+                    display: flex;
+                    justify-content: space-between;
+                    margin-bottom: 40px;
+
+                    & .col {
+                        flex-grow: 1;
+                        min-width: 262px;
+
+                        & fieldset {
+                            border: none;
+                            padding: 0;
+
+                            & legend {
+                                color: @colorBackGroundFourth;
+                                .fonts(15px; 20px; 700; normal);
+                                text-transform: uppercase;
+                            }
+                        }
+
+                        &:first-child {
+                            display: flex;
+                            flex-direction: column;
+
+                            & .trends {
+                                & .trend-nav {
+                                    list-style: none;
+                                    display: flex;
+                                    justify-content: flex-start;
+                                    padding: 0;
+                                    margin: 6px 0;
+
+                                    &-item {
+                                        margin: 0 10px 0 0;
+
+
+
+                                        &:not(:last-child) {
+                                            padding-right: 10px;
+                                            border-right: 1px solid @colorBackGroundEighth;
+                                        }
+                                    }
+
+                                    &-link {
+                                        text-decoration: none;
+                                        color: @colorBackGroundFourth;
+
+                                        &:hover {
+                                            color: @colorBrand;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+
+                        &:nth-child(2) {
+                            & .sizes {
+                                display: flex;
+                                flex-wrap: wrap;
+
+                                & .size {
+
+                                    margin: 3px 20px 3px 3px;
+                                    min-width: 50px;
+                                }
+                            }
+
+                            & fieldset label {
+                                color: @colorBackGroundFourth;
+                                .fonts(14px; 20px; 400; normal);
+                            }
+                        }
+
+                        &:nth-child(3) {
+
+                            .range-slider {
+                                .range-slider(100%; 20px; 10px; @colorInputSecond; @colorBrand; left; 8px; 14px; 80px);
+
+                            }
+
+                            & fieldset {
+                                margin-bottom: 13px;
+                            }
+
+                            & .range {
+                                display: flex;
+                                justify-content: space-between;
+                                .fonts(14px; 26px; 400; normal);
+                            }
+
+                        }
+                    }
+
+
+                }
+            }
+
+            & .d-pager {
+                display: flex;
+                justify-content: space-between;
+
+                & .col:first-child {
+                    .borders(solid; @colorBackGroundSixth; 1px; 3px);
+
+                    & .pager-nav {
+                        list-style: none;
+                        padding: 0;
+                        margin: 15px 7px;
+                        display: flex;
+                        align-items: center;
+
+                        & .pager-nav-link {
+                            text-decoration: none;
+                            /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
+                            .fonts(16px; 26px; 300; normal);
+                            color: @colorHighLightsFourth;
+                            padding: 0 7px;
+
+                            &-current {
+                                color: @colorBrand;
+                            }
+                        }
+
+                        & a {
+                            display: block;
+
+                            &:hover {
+                                color: @colorBrand;
+
+                            }
+                        }
+
+                        & :first-child .pager-nav-link {
+                            color: @colorBackGroundSeventh;
+                            transform: rotate(180deg);
+
+                            &:hover {
+                                color: @colorBrand;
+
+                            }
+                        }
+
+                        & :nth-child(7) .pager-nav-link {
+                            padding-right: 0px;
+
+                            &:after {
+                                content: '';
+                                padding: 0 7px;
+                                border-bottom: 1px dotted @colorBackGroundSeventh;
+
+                            }
+                        }
+
+                        & :nth-child(8) .pager-nav-link {
+                            padding-left: 0px;
+                        }
+
+                        & :last-child .pager-nav-link {
+                            color: @colorBackGroundSeventh;
+
+                            &:hover {
+                                color: @colorBrand;
+
+                            }
+                        }
+                    }
+                }
+
             }
         }
+
 
     }
 
