@@ -184,6 +184,15 @@ body {
   background-color: #f16d7f;
   color: #fff;
 }
+.btn:hover .btn-decor-add-cart {
+  background-color: #f16d7f;
+  color: #fff;
+  transition-duration: 100ms;
+}
+.btn:hover .btn-decor-add-cart span {
+  background-color: #f16d7f;
+  color: #fff;
+}
 .btn:hover .btn-decor-view {
   background-color: #f16d7f;
   color: #fff;
@@ -271,6 +280,17 @@ body {
   text-decoration: none;
   text-align: center;
 }
+.btn-decor-add-cart {
+  padding: 15px 45px;
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: normal;
+  background-color: #fff;
+  background-image: none;
+  text-decoration: none;
+  text-align: center;
+}
 .btn-decor-cart {
   padding: 0;
   font-size: 14px;
@@ -346,6 +366,14 @@ body {
   border-width: 1px 1px 1px 1px;
   border-radius: 0px 0px 0px 0px;
 }
+.btn-borders-add-cart {
+  border-style: solid;
+  border-color: #f16d7f;
+  border-width: 1px 1px 1px 1px;
+  border-radius: 0px 0px 0px 0px;
+  display: flex;
+  justify-content: center;
+}
 .btn-borders-view {
   border-style: solid;
   border-color: #f16d7f;
@@ -391,6 +419,10 @@ body {
 .btn-text-check {
   padding-left: 20px;
   color: #f16d7f;
+}
+.btn-text-add-cart {
+  color: #f16d7f;
+  margin-left: 15px;
 }
 .btn-text-cart {
   padding-left: 20px;
@@ -578,6 +610,7 @@ body {
   margin-right: 10px;
   padding: 3px;
   position: relative;
+  z-index: 2;
 }
 .account .cart:hover {
   background-color: #e8e8e8;
@@ -1816,7 +1849,125 @@ body {
   display: flex;
   justify-content: space-between;
 }
+.product-adjust-wrap .cart-form .selectors .col h3 {
+  color: #2f2f2f;
+  font-size: 14px;
+  line-height: 24px;
+  font-weight: 700;
+  letter-spacing: normal;
+  padding: 15px 0;
+  margin: 0;
+}
+.product-adjust-wrap .cart-form .selectors .col input,
+.product-adjust-wrap .cart-form .selectors .col select {
+  width: 144px;
+  padding: 10px;
+  border: 1px solid #eaeaea;
+  color: #bcbcbc;
+  font-size: 13px;
+  line-height: 24px;
+  font-weight: 400;
+  letter-spacing: normal;
+}
+.product-adjust-wrap .cart-form .selectors .col select option .red {
+  width: 12px;
+  height: 12px;
+  display: inline-block;
+  background-color: red;
+}
 .product-adjust-wrap .cart-form .btn {
   text-align: center;
   margin: 32px 0 122px 0;
+}
+.check-out {
+  padding: 32px 15px 90px 15px;
+}
+.check-out details {
+  padding-bottom: 28px;
+  margin-bottom: 28px;
+  border-bottom: 1px solid #e8e8e8;
+}
+.check-out details .cont {
+  display: flex;
+  justify-content: space-between;
+  padding: 32px;
+}
+.check-out details .cont .stub {
+  font-size: 50px;
+  line-height: 54px;
+  font-weight: 900;
+  letter-spacing: 0.025em;
+}
+.check-out details .cont .btn-decor-cart {
+  width: 180px;
+}
+.check-out details .cont .btn a {
+  display: inline-block;
+}
+.check-out details .cont .btn-text-cart {
+  padding-left: 0;
+}
+.check-out details .cont .col {
+  width: 390px;
+}
+.check-out details .cont .col .login input {
+  display: block;
+  border: 1px solid #eaeaea;
+  line-height: 41px;
+  margin: 16px 0;
+  width: 100%;
+}
+.check-out details .cont .col .login .req-color {
+  color: #ff0d0d;
+}
+.check-out details .cont .col .login .btn-wrap {
+  display: flex;
+  align-items: center;
+}
+.check-out details .cont .col .login .btn-wrap span {
+  margin-left: 32px;
+}
+.check-out details .radio {
+  margin-top: 20px;
+}
+.check-out details .radio label {
+  text-transform: uppercase;
+  margin-left: 10px;
+  font-size: 12px;
+  line-height: 1.2;
+  font-weight: 400;
+  letter-spacing: normal;
+}
+.check-out details summary {
+  color: #222222;
+  font-size: 16px;
+  line-height: 1.2;
+  font-weight: 700;
+  letter-spacing: normal;
+}
+.check-out details summary::-webkit-details-marker {
+  display: none;
+}
+.check-out details h3 {
+  font-size: 13px;
+  line-height: 1.2;
+  font-weight: 400;
+  letter-spacing: normal;
+  color: #222222;
+  text-transform: uppercase;
+}
+.check-out details p.text-reg {
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 400;
+  letter-spacing: normal;
+  color: #b3b2b2;
+  margin-bottom: 32px;
+}
+.check-out details p.text-adv {
+  font-size: 13px;
+  line-height: 20px;
+  font-weight: 400;
+  letter-spacing: normal;
+  color: #b3b2b2;
 }
