@@ -1,54 +1,61 @@
 /* Variables */
 /* Colors */
-@colorBrand: #f16d7f;
-@colorBrandSecond: #ef5b70;
-@colorBrandLight: #f8f3f4;
-@colorBrandSecond: #f16d7f;
-@colorHighLights: #222222;
-@colorGreyAgain: #e2e2e2;
-@colorGreySecond: #e9e9e9;
-@colorGreyThird: #5e5e5e;
-@colorGreyFourth: #b9b9b9;
-@colorGreyFith: #bcbcbc;
-@colorGreySixth: #b3b2b2;
-@colorDarkGrey: #4d4d4d;
-@colorDarkGreySecond: #2f2f2f;
-@colorHighLightsInvert: #fff;
-@colorHighLightsSecond: #222224;
-@colorHighLightsSecondInvert: #fbfbfb;
-@colorHighLightsThird: #232323;
-@colorHighLightsFourth: #4f4f4f;
-@colorHighLightsFith: #838383;
-@colorHighLightsSixth: #4a4a4a;
-@colorHighLightsSixthInvert: #eaeaea;
-@colorHighLightsSeventh: #636363;
-@colorHighLightsEight: #656565;
-@colorHighLightsNinth: #575757;
-@colorRegular: #9f9f9f;
-@colorRegularSecond: #898989;
-@colorRegularThird: #7a7a7a;
-@colorRegularForth: #e8e8e8;
-@colorBackGround: #e6e6e6;
-@colorBackGroundFourth: #6f6e6e;
-@colorBackGroundSecond: #cdcdcc;
-@colorBackGroundThird: #e8e8e8;
-@colorBackGroundThith: #f3f3f3;
-@colorBackGroundSixth: #ebebeb;
-@colorBackGroundSeventh: #aaaaaa;
-@colorBackGroundEighth: #dfdfdf;
-@colorBackGroundTenth: #f5f3f3;
-@colorPicts: #b2b2b2;
-@colorPictsActive: #f7f7f8;
-@colorFadeOut: #a4a4a4;
-@colorSpacer: #ececec;
-@colorBorder: #d6d6d6;
-@colorInput: #e1e1e1;
-@colorInputSecond: #f0f0f0;
-@colorStarts: #e4af48;
-@colorReqFields: #ff0d0d;
-@colorX: #c0c0c0;
-@colorSlideBtn: rgba(42, 42, 42, 0.14);
-@buttonGradient: linear-gradient(180.0deg, #f9f9f9 0%, #f5f5f5 100%);
+/* Dark Gray colors */
+@color_gray_dark_01: #222222;
+@color_gray_dark_02: #222224;
+@color_gray_dark_03: #232323;
+@color_gray_dark_04: #2f2f2f;
+@color_gray_dark_05: #4a4a4a;
+@color_gray_dark_06: #4d4d4d;
+@color_gray_dark_07: #4f4f4f;
+@color_gray_dark_08: #575757;
+@color_gray_dark_09: #5e5e5e;
+@color_gray_dark_10: #636363;
+@color_gray_dark_11: #656565;
+@color_gray_dark_12: #6f6e6e;
+@color_gray_dark_13: #7a7a7a;
+@color_gray_dark_14: #838383;
+@color_gray_dark_15: #898989;
+@color_gray_dark_16: #9f9f9f;
+@color_gray_dark_17: #a4a4a4;
+@color_gray_dark_18: #aaaaaa;
+@color_gray_dark_19: #b3b2b2;
+
+/* Light Gray Colors */
+@color_gray_light_01: #b2b2b2;
+@color_gray_light_02: #b9b9b9;
+@color_gray_light_03: #c0c0c0;
+@color_gray_light_04: #bcbcbc;
+@color_gray_light_05: #cdcdcc;
+/* rgba(42, 42, 42, 0.14)*/
+@color_gray_light_06: #CFCFCF;
+@color_gray_light_07: #d6d6d6;
+@color_gray_light_08: #dfdfdf;
+@color_gray_light_09: #e1e1e1;
+@color_gray_light_10: #e2e2e2;
+@color_gray_light_11: #e6e6e6;
+@color_gray_light_12: #e8e8e8;
+@color_gray_light_13: #e9e9e9;
+@color_gray_light_14: #eaeaea;
+@color_gray_light_15: #ebebeb;
+@color_gray_light_16: #ececec;
+@color_gray_light_17: #f0f0f0;
+@color_gray_light_18: #f3f3f3;
+@color_gray_light_19: #f5f3f3;
+@color_gradient_gray_light_20: linear-gradient(180.0deg, #f9f9f9 0%, #f5f5f5 100%);
+@color_gray_light_21: #f7f7f8;
+@color_gray_light_22: #f8f3f4;
+@color_gray_light_23: #fbfbfb;
+@color_white: #ffffff;
+
+/* Misc colors */
+@color_gold_01: #e4af48;
+@color_red_01: #ff0d0d;
+
+/* Brand`s colors */
+@color_brand_01: #ef5b70;
+@color_brand_02: #f16d7f;
+
 @textBaseSize: 14px;
 @textBaseLineHeight: 24px;
 @textBaseWeight: 400;
@@ -184,13 +191,13 @@ body {
 }
 
 .header {
-    background-color: @colorHighLightsInvert;
+    background-color: @color_white;
 
     &-hr {
 
         border-bottom-width: 1px;
         border-bottom-style: solid;
-        border-bottom-color: @colorInput;
+        border-bottom-color: @color_gray_light_09;
     }
 
     &-wrap {
@@ -232,20 +239,20 @@ body {
         }
 
         &:hover .nav-link {
-            background-color: @colorHighLights;
-            color: @colorHighLightsInvert;
+            background-color: @color_gray_dark_01;
+            color: @color_white;
         }
 
         &-active {
             border-bottom: 3px;
-            border-bottom-color: @colorBrandSecond;
+            border-bottom-color: @color_brand_01;
             border-bottom-style: solid;
         }
 
         &-ddc {
             display: none;
             position: absolute;
-            background-color: @colorHighLightsInvert;
+            background-color: @color_white;
             z-index: 1;
             min-width: 846px;
             min-height: 310px;
@@ -269,9 +276,9 @@ body {
                 /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
                 .fonts(14px; 32px; 400);
                 text-transform: uppercase;
-                color: @colorHighLightsThird;
+                color: @color_gray_dark_03;
                 margin: 0 0 15px 0;
-                border-bottom: 1px solid @colorBackGroundThird;
+                border-bottom: 1px solid @color_gray_light_12;
             }
 
             & .browse-nav {
@@ -284,7 +291,7 @@ body {
                 text-decoration: none;
                 /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
                 .fonts(@lHeight: 28px);
-                color: @colorHighLightsFourth;
+                color: @color_gray_dark_07;
                 padding: 0;
             }
 
@@ -295,7 +302,7 @@ body {
             }
 
             & a:hover {
-                background-color: @colorBackGroundThird;
+                background-color: @color_gray_light_12;
 
             }
         }
@@ -307,7 +314,7 @@ body {
         /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
         .fonts(@lHeight: 26px; @weight: 700; @ls: normal);
         text-transform: uppercase;
-        color: @colorHighLights;
+        color: @color_gray_dark_01;
         position: relative;
 
     }
@@ -325,7 +332,7 @@ body {
         /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
         .fonts(27px; 32px; 300);
         text-transform: uppercase;
-        color: @colorHighLights;
+        color: @color_gray_dark_01;
         text-decoration: none;
         display: flex;
     }
@@ -340,7 +347,7 @@ body {
 
     & span > span {
         font-weight: 900;
-        color: @colorBrand;
+        color: @color_brand_02;
     }
 }
 
@@ -355,115 +362,116 @@ body {
     /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
     &:hover &-decor-def {
         background-image: none;
+        color: coral;
     }
 
     &:hover &-decor-brand {
-        background-color: @colorHighLightsInvert;
-        color: @colorHighLights;
-        outline: 1px solid @colorBackGroundSecond;
+        background-color: @color_white;
+        color: @color_gray_dark_01;
+        outline: 1px solid @color_gray_light_05;
         transition-duration: 100ms;
 
         & span {
-            background-color: @colorHighLightsInvert;
-            color: @colorHighLights;
+            background-color: @color_white;
+            color: @color_gray_dark_01;
 
         }
     }
 
 
     &:hover &-decor-bap {
-        background-color: @colorHighLightsInvert;
-        color: @colorHighLights;
-        outline: 1px solid @colorBackGroundSecond;
+        background-color: @color_white;
+        color: @color_gray_dark_01;
+        outline: 1px solid @color_gray_light_05;
         transition-duration: 100ms;
 
         & span {
-            background-color: @colorHighLightsInvert;
-            color: @colorHighLights;
+            background-color: @color_white;
+            color: @color_gray_dark_01;
 
         }
     }
 
     &:hover &-decor-check {
-        background-color: @colorBrand;
-        color: @colorHighLightsInvert;
+        background-color: @color_brand_02;
+        color: @color_white;
         transition-duration: 100ms;
 
         & span {
-            background-color: @colorBrand;
-            color: @colorHighLightsInvert;
+            background-color: @color_brand_02;
+            color: @color_white;
 
         }
     }
 
     &:hover &-decor-add-cart {
-        background-color: @colorBrand;
-        color: @colorHighLightsInvert;
+        background-color: @color_brand_02;
+        color: @color_white;
         transition-duration: 100ms;
 
         & span {
-            background-color: @colorBrand;
-            color: @colorHighLightsInvert;
+            background-color: @color_brand_02;
+            color: @color_white;
 
         }
     }
 
     &:hover &-decor-view {
-        background-color: @colorBrand;
-        color: @colorHighLightsInvert;
+        background-color: @color_brand_02;
+        color: @color_white;
         transition-duration: 100ms;
 
         & span {
-            background-color: @colorBrand;
-            color: @colorHighLightsInvert;
+            background-color: @color_brand_02;
+            color: @color_white;
 
         }
     }
 
     &:hover &-decor-cart {
-        background-color: @colorHighLightsSixth;
-        color: @colorHighLightsSixthInvert;
+        background-color: @color_gray_dark_05;
+        color: @color_gray_light_14;
         transition-duration: 100ms;
 
         & span {
-            background-color: @colorHighLightsSixth;
-            color: @colorHighLightsSixthInvert;
+            background-color: @color_gray_dark_05;
+            color: @color_gray_light_14;
 
         }
     }
 
     &:hover &-decor-shop {
-        background-color: @colorBrand;
-        color: @colorHighLightsInvert;
+        background-color: @color_brand_02;
+        color: @color_white;
         transition-duration: 100ms;
 
         & span {
-            background-color: @colorHighLightsSixth;
-            color: @colorHighLightsSixthInvert;
+            background-color: @color_gray_dark_05;
+            color: @color_gray_light_14;
 
         }
     }
 
     &:hover &-decor-proc-check {
-        background-color: @colorHighLightsSixthInvert;
-        color: @colorHighLightsSixth;
+        background-color: @color_gray_light_14;
+        color: @color_gray_dark_05;
         transition-duration: 100ms;
 
         & span {
-            background-color: @colorBrand;
-            color: @colorHighLightsInvert;
+            background-color: @color_brand_02;
+            color: @color_white;
 
         }
     }
 
     &:hover &-decor-slide {
-        background-color: @colorHighLightsSixthInvert;
-        color: @colorHighLightsSixth;
+        background-color: @color_gray_light_14;
+        color: @color_gray_dark_05;
         transition-duration: 100ms;
 
         & span {
-            background-color: @colorHighLightsSixthInvert;
-            color: @colorHighLightsSixth;
+            background-color: @color_gray_light_14;
+            color: @color_gray_dark_05;
 
         }
     }
@@ -473,8 +481,8 @@ body {
             padding: 0;
             .fonts(@lHeight: 38px; @weight: 300);
 
-            background-color: @colorBackGroundSecond;
-            background-image: @buttonGradient;
+            background-color: @color_gray_light_05;
+            background-image: @color_gradient_gray_light_20;
 
 
         }
@@ -483,7 +491,7 @@ body {
             padding: 0;
             .fonts(15px; 38px; 400);
 
-            background-color: @colorBrand;
+            background-color: @color_brand_02;
             background-image: none;
         }
 
@@ -493,7 +501,7 @@ body {
             text-decoration: none;
             text-align: center;
 
-            background-color: @colorBrand;
+            background-color: @color_brand_02;
             background-image: none;
         }
 
@@ -502,7 +510,7 @@ body {
             .fonts(14px; 50px; 700; normal);
             margin-bottom: 10px;
             text-transform: uppercase;
-            background-color: @colorHighLightsInvert;
+            background-color: @color_white;
             background-image: none;
             text-decoration: none;
             text-align: center;
@@ -512,7 +520,7 @@ body {
 
             padding: 15px 45px;
             .fonts(16px; 1.2; 700; normal);
-            background-color: @colorHighLightsInvert;
+            background-color: @color_white;
             background-image: none;
             text-decoration: none;
             text-align: center;
@@ -522,7 +530,7 @@ body {
             padding: 0;
             .fonts(14px; 50px; 700; normal);
             text-transform: uppercase;
-            background-color: @colorHighLightsInvert;
+            background-color: @color_white;
             background-image: none;
             text-decoration: none;
             text-align: center;
@@ -532,8 +540,8 @@ body {
             padding: 0;
             .fonts(14px; 50px; 700; normal);
             text-transform: uppercase;
-            background-color: @colorHighLightsInvert;
-            color: @colorHighLightsFourth;
+            background-color: @color_white;
+            color: @color_gray_dark_07;
             background-image: none;
             text-decoration: none;
             text-align: center;
@@ -544,7 +552,7 @@ body {
             padding: 0;
             .fonts(14px; 50px; 700; normal);
             text-transform: uppercase;
-            background-color: @colorBrand;
+            background-color: @color_brand_02;
             background-image: none;
             text-decoration: none;
             text-align: center;
@@ -555,7 +563,7 @@ body {
             padding: 15px 45px;
             .fonts(16px; 26px; 300; normal);
             text-transform: uppercase;
-            background-color: @colorHighLightsInvert;
+            background-color: @color_white;
             background-image: none;
             text-decoration: none;
             text-align: center;
@@ -565,42 +573,42 @@ body {
             padding: 10px 20px;
             .fonts(24px; 24px; 400);
 
-            background-color: @colorSlideBtn;
+            background-color: @color_gray_light_06;
             background-image: none;
         }
     }
 
     &-borders {
-        .borders(@color: @colorBackGround);
+        .borders(@color: @color_gray_light_11);
 
         &-none {
             border: none;
         }
 
         &-check {
-            .borders(@color: @colorBrand; @radius: 0px);
+            .borders(@color: @color_brand_02; @radius: 0px);
         }
 
         &-add-cart {
-            .borders(@color: @colorBrand; @radius: 0px);
+            .borders(@color: @color_brand_02; @radius: 0px);
             display: flex;
             justify-content: center;
         }
 
         &-view {
-            .borders(@color: @colorBrand; @radius: 3px);
+            .borders(@color: @color_brand_02; @radius: 3px);
         }
 
         &-cart {
-            .borders(@color: @colorHighLightsSixthInvert; @radius: 0px);
+            .borders(@color: @color_gray_light_14; @radius: 0px);
         }
 
         &-shop {
-            .borders(@color: @colorHighLightsSixthInvert; @radius: 0px);
+            .borders(@color: @color_gray_light_14; @radius: 0px);
         }
 
         &-proc-check {
-            .borders(@color: @colorBrand; @radius: 0px);
+            .borders(@color: @color_brand_02; @radius: 0px);
         }
     }
 
@@ -621,39 +629,39 @@ body {
     &-text {
         &-def {
             padding-left: 16px;
-            color: @colorHighLights;
+            color: @color_gray_dark_01;
         }
 
         &-brand {
             padding-left: 20px;
-            color: @colorHighLightsInvert;
+            color: @color_white;
         }
 
 
         &-check {
             padding-left: 20px;
-            color: @colorBrand;
+            color: @color_brand_02;
         }
 
         &-add-cart {
-            color: @colorBrand;
+            color: @color_brand_02;
             margin-left: 15px;
         }
 
         &-cart {
             padding-left: 20px;
-            color: @colorHighLightsSixth;
+            color: @color_gray_dark_05;
         }
 
         &-shop {
             padding: 0 20px 0 20px;
-            color: @colorHighLightsSixth;
+            color: @color_gray_dark_05;
         }
 
         &-proc-check {
 
             padding: 0 20px 0 20px;
-            color: @colorHighLightsInvert;
+            color: @color_white;
         }
 
 
@@ -662,30 +670,30 @@ body {
     &-icon {
         &-def {
             padding: 0 8px;
-            color: @colorHighLightsFith;
+            color: @color_gray_dark_14;
         }
 
         &-brand {
             padding: 0 12px 0 8px;
-            color: @colorHighLightsInvert;
+            color: @color_white;
             font-size: 14px;
         }
 
         &-bap {
             padding: 0 20px 0 10px;
-            color: @colorHighLightsInvert;
+            color: @color_white;
             font-weight: 400;
         }
 
         &-slide {
-            color: @colorHighLightsInvert;
+            color: @color_white;
         }
     }
 
     &-ddc {
         display: none;
         position: absolute;
-        background-color: @colorHighLightsInvert;
+        background-color: @color_white;
         z-index: 1;
         min-width: 262px;
         padding: 16px;
@@ -695,9 +703,9 @@ body {
             /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
             .fonts(14px; 32px; 400);
             text-transform: uppercase;
-            color: @colorHighLightsThird;
+            color: @color_gray_dark_03;
             margin: 0;
-            border-bottom: 1px solid @colorBackGroundThird;
+            border-bottom: 1px solid @color_gray_light_12;
         }
 
         & .browse-nav {
@@ -709,7 +717,7 @@ body {
                 text-decoration: none;
                 /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
                 .fonts(@lHeight: 28px);
-                color: @colorHighLightsFourth;
+                color: @color_gray_dark_07;
                 padding: 0;
             }
 
@@ -717,7 +725,7 @@ body {
                 display: block;
 
                 &:hover {
-                    background-color: @colorBackGroundThird;
+                    background-color: @color_gray_light_12;
 
                 }
             }
@@ -742,7 +750,7 @@ body {
         .fonts(14px; 38px; 300);
 
         &-inp {
-            color: @colorFadeOut;
+            color: @color_gray_dark_17;
             width: 80%;
             font-size: inherit;
             font-weight: inherit;
@@ -772,26 +780,26 @@ body {
 
         &-btn {
             width: 20%;
-            color: @colorFadeOut;
-            background-color: @colorHighLightsInvert;
+            color: @color_gray_dark_17;
+            background-color: @color_white;
 
             &:active {
                 opacity: 0.29;
                 transition-duration: 100ms;
-                background-color: @colorHighLightsInvert;
+                background-color: @color_white;
             }
 
             &:hover {
                 opacity: 0.29;
                 transition-duration: 200ms;
-                background-color: @colorFadeOut;
-                color: @colorHighLightsInvert;
+                background-color: @color_gray_dark_17;
+                color: @color_white;
             }
 
         }
 
         &-borders {
-            .borders(@color: @colorBackGround);
+            .borders(@color: @color_gray_light_11);
         }
 
     }
@@ -801,13 +809,13 @@ body {
         .fonts(14px; 46px; 400);
 
         &-inp {
-            color: @colorHighLightsSecond;
+            color: @color_gray_dark_02;
             width: 65%;
             font-size: inherit;
             font-weight: inherit;
             line-height: inherit;
             padding: 0px 6px 0px 26px;
-            background-color: @colorInput;
+            background-color: @color_gray_light_09;
 
         }
 
@@ -826,20 +834,20 @@ body {
 
         &-btn {
             width: 35%;
-            color: @colorHighLightsInvert;
-            background-color: @colorBrand;
+            color: @color_white;
+            background-color: @color_brand_02;
 
 
             &:active {
-                color: @colorHighLights;
+                color: @color_gray_dark_01;
                 transition-duration: 100ms;
-                background-color: @colorHighLightsInvert;
+                background-color: @color_white;
             }
 
             &:hover {
                 transition-duration: 200ms;
-                background-color: @colorFadeOut;
-                color: @colorHighLights;
+                background-color: @color_gray_dark_17;
+                color: @color_gray_dark_01;
             }
         }
 
@@ -861,7 +869,7 @@ body {
         z-index: 2;
 
         &:hover {
-            background-color: @colorBackGroundThird;
+            background-color: @color_gray_light_12;
         }
 
         &:hover .cart-ddc {
@@ -873,7 +881,7 @@ body {
             flex-direction: column;
             position: absolute;
             left: -47px;
-            background-color: @colorHighLightsInvert;
+            background-color: @color_white;
             z-index: 1;
             padding: 20px;
             border-radius: 5px;
@@ -890,15 +898,15 @@ body {
                 & .cart-item {
                     display: flex;
                     align-items: center;
-                    border-bottom: 1px solid @colorBackGroundThird;
+                    border-bottom: 1px solid @color_gray_light_12;
                     .fonts(12px; 1.2; 700; normal);
                     text-transform: uppercase;
-                    color: @colorHighLights;
+                    color: @color_gray_dark_01;
                     padding-bottom: 20px;
                     cursor: pointer;
 
                     &:hover {
-                        outline: 1px solid @colorBrand;
+                        outline: 1px solid @color_brand_02;
                     }
 
                     & .col p {
@@ -913,19 +921,19 @@ body {
                         flex-grow: 1;
 
                         & p:nth-child(2) {
-                            color: @colorStarts;
+                            color: @color_gold_01;
                         }
 
                         & p:last-child {
-                            color: @colorBrand;
+                            color: @color_brand_02;
                         }
                     }
 
                     & .col:last-child {
-                        color: @colorX;
+                        color: @color_gray_light_03;
 
                         &:hover {
-                            color: @colorHighLights;
+                            color: @color_gray_dark_01;
                         }
                     }
                 }
@@ -971,8 +979,8 @@ body {
 
         /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
         .fonts(@lHeight: 32px);
-        color: @colorHighLightsInvert;
-        background-color: @colorBrand;
+        color: @color_white;
+        background-color: @color_brand_02;
         background-image: none;
 
 
@@ -983,16 +991,16 @@ body {
     height: 613px;
     padding-top: 224px;
     background: url(../img/image_frame_84.png) center center/cover no-repeat;
-    background-color: @colorBackGroundThird;
+    background-color: @color_gray_light_12;
 
     & > div > h1 {
 
         /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
         .fonts(40px; 1.2);
-        color: @colorHighLights;
+        color: @color_gray_dark_01;
         width: 50%;
         padding-left: 12px;
-        border-left: 12px solid @colorBrand;
+        border-left: 12px solid @color_brand_02;
     }
 
     & > div > h1 > span:first-child {
@@ -1000,7 +1008,7 @@ body {
     }
 
     & > div > h1 > span:last-child {
-        color: @colorBrand;
+        color: @color_brand_02;
     }
 }
 
@@ -1026,7 +1034,7 @@ body {
         /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
         .fonts(18px; 1.2; 900);
         text-transform: uppercase;
-        color: @colorHighLights;
+        color: @color_gray_dark_01;
         display: inline-block;
         padding: 16px;
         margin: 0;
@@ -1038,7 +1046,7 @@ body {
 
     & .item h3 span {
         font-size: 30px;
-        color: @colorBrand;
+        color: @color_brand_02;
     }
 }
 
@@ -1059,11 +1067,11 @@ body {
             padding: 0 15px;
 
             & summary {
-                border-left: 5px solid @colorBrandSecond;
-                border-bottom: 1px solid @colorInput;
+                border-left: 5px solid @color_brand_01;
+                border-bottom: 1px solid @color_gray_light_09;
                 .fonts(14px; 37px; 700; normal);
                 text-transform: uppercase;
-                color: @colorBackGroundFourth;
+                color: @color_gray_dark_12;
                 display: flex;
                 justify-content: space-between;
                 align-items: center;
@@ -1092,7 +1100,7 @@ body {
 
                 &[open] {
                     & summary {
-                        color: @colorBrandSecond;
+                        color: @color_brand_01;
 
                         &::after {
                             content: "\f0d7";
@@ -1110,7 +1118,7 @@ body {
                         text-decoration: none;
                         /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
                         .fonts(@lHeight: 33px; @ls: normal);
-                        color: @colorHighLightsFourth;
+                        color: @color_gray_dark_07;
                         padding: 0;
                     }
 
@@ -1118,7 +1126,7 @@ body {
                         display: block;
 
                         &:hover {
-                            background-color: @colorBackGroundThird;
+                            background-color: @color_gray_light_12;
 
                         }
                     }
@@ -1141,13 +1149,13 @@ body {
                             margin: 10px;
                             padding-left: 4px;
                             display: inline-block;
-                            .borders(solid; @colorBackGroundSixth; 1px; 0);
-                            background-color: @colorHighLightsInvert;
+                            .borders(solid; @color_gray_light_15; 1px; 0);
+                            background-color: @color_white;
                             .fonts(14px; 24px; 400; normal);
-                            color: @colorBackGroundFourth;
+                            color: @color_gray_dark_12;
 
                             &-l {
-                                border-right: 1px solid @colorBackGroundThith;
+                                border-right: 1px solid @color_gray_light_18;
                                 display: inline-block;
 
                                 & > * {
@@ -1175,7 +1183,7 @@ body {
                                 }
 
                                 & select {
-                                    color: @colorBackGroundFourth;
+                                    color: @color_gray_dark_12;
                                     .fonts(14px; 24px; 400; normal);
                                     border: none;
                                     appearance: none;
@@ -1206,7 +1214,7 @@ body {
 
                     }
 
-                    background-color: @colorBackGroundThith;
+                    background-color: @color_gray_light_18;
                 }
 
                 & .filter-ribbon {
@@ -1223,7 +1231,7 @@ body {
                             padding: 0;
 
                             & legend {
-                                color: @colorBackGroundFourth;
+                                color: @color_gray_dark_12;
                                 .fonts(15px; 20px; 700; normal);
                                 text-transform: uppercase;
                             }
@@ -1248,16 +1256,16 @@ body {
 
                                         &:not(:last-child) {
                                             padding-right: 10px;
-                                            border-right: 1px solid @colorBackGroundEighth;
+                                            border-right: 1px solid @color_gray_light_08;
                                         }
                                     }
 
                                     &-link {
                                         text-decoration: none;
-                                        color: @colorBackGroundFourth;
+                                        color: @color_gray_dark_12;
 
                                         &:hover {
-                                            color: @colorBrand;
+                                            color: @color_brand_02;
                                         }
                                     }
                                 }
@@ -1277,7 +1285,7 @@ body {
                             }
 
                             & fieldset label {
-                                color: @colorBackGroundFourth;
+                                color: @color_gray_dark_12;
                                 .fonts(14px; 20px; 400; normal);
                             }
                         }
@@ -1285,7 +1293,7 @@ body {
                         &:nth-child(3) {
 
                             .range-slider {
-                                .range-slider(100%; 20px; 10px; @colorInputSecond; @colorBrand; left; 8px; 14px; 80px);
+                                .range-slider(100%; 20px; 10px; @color_gray_light_17; @color_brand_02; left; 8px; 14px; 80px);
 
                             }
 
@@ -1311,7 +1319,7 @@ body {
                 justify-content: space-between;
 
                 & .col:first-child {
-                    .borders(solid; @colorBackGroundSixth; 1px; 3px);
+                    .borders(solid; @color_gray_light_15; 1px; 3px);
 
                     & .pager-nav {
                         list-style: none;
@@ -1324,11 +1332,11 @@ body {
                             text-decoration: none;
                             /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
                             .fonts(16px; 26px; 300; normal);
-                            color: @colorHighLightsFourth;
+                            color: @color_gray_dark_07;
                             padding: 0 7px;
 
                             &-current {
-                                color: @colorBrand;
+                                color: @color_brand_02;
                             }
                         }
 
@@ -1336,17 +1344,17 @@ body {
                             display: block;
 
                             &:hover {
-                                color: @colorBrand;
+                                color: @color_brand_02;
 
                             }
                         }
 
                         & :first-child .pager-nav-link {
-                            color: @colorBackGroundSeventh;
+                            color: @color_gray_dark_18;
                             transform: rotate(180deg);
 
                             &:hover {
-                                color: @colorBrand;
+                                color: @color_brand_02;
 
                             }
                         }
@@ -1357,7 +1365,7 @@ body {
                             &:after {
                                 content: '';
                                 padding: 0 7px;
-                                border-bottom: 1px dotted @colorBackGroundSeventh;
+                                border-bottom: 1px dotted @color_gray_dark_18;
 
                             }
                         }
@@ -1367,10 +1375,10 @@ body {
                         }
 
                         & :last-child .pager-nav-link {
-                            color: @colorBackGroundSeventh;
+                            color: @color_gray_dark_18;
 
                             &:hover {
-                                color: @colorBrand;
+                                color: @color_brand_02;
 
                             }
                         }
@@ -1397,7 +1405,7 @@ body {
                 & .img-wrap {
                     height: 280px;
                     width: 261px;
-                    background-color: @colorGreySecond;
+                    background-color: @color_gray_light_13;
 
                 }
 
@@ -1414,7 +1422,7 @@ body {
                 /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
                 .fonts(13px; 1.2; 400; normal);
                 text-transform: uppercase;
-                color: @colorHighLights;
+                color: @color_gray_dark_01;
                 margin-left: 15px
             }
 
@@ -1422,7 +1430,7 @@ body {
                 /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
                 .fonts(16px; 1.2; 700; normal);
                 text-transform: uppercase;
-                color: @colorBrand;
+                color: @color_brand_02;
                 margin-left: 15px
             }
         }
@@ -1437,19 +1445,19 @@ body {
         & h2 {
             /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
             .fonts(30px; 54px; 700);
-            color: @colorHighLights;
+            color: @color_gray_dark_01;
 
             &.upper {
                 text-transform: uppercase;
                 .fonts(24px; 20px; 900; normal);
-                color: @colorDarkGrey;
+                color: @color_gray_dark_06;
             }
         }
 
         & p {
             /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
             .fonts(14px; normal);
-            color: @colorRegular;
+            color: @color_gray_dark_16;
         }
 
         & > * {
@@ -1465,8 +1473,8 @@ body {
 
             /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
             .fonts(15px; 30px; );
-            color: @colorHighLightsInvert;
-            background-color: @colorBrand;
+            color: @color_white;
+            background-color: @color_brand_02;
             background-image: none;
         }
 
@@ -1474,8 +1482,8 @@ body {
 
             /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
             .fonts(16px; 30px);
-            color: @colorHighLightsInvert;
-            background-color: @colorBrand;
+            color: @color_white;
+            background-color: @color_brand_02;
             background-image: none;
             margin-left: 13px;
         }
@@ -1483,7 +1491,7 @@ body {
 }
 
 .top-ribbon {
-    background-color: @colorBrandLight;
+    background-color: @color_gray_light_22;
     text-transform: uppercase;
     margin-bottom: 58px;
 
@@ -1499,20 +1507,20 @@ body {
 
         & h1 {
             .fonts(24px; 24px; 900; normal);
-            color: @colorBrand;
+            color: @color_brand_02;
         }
 
         & .breadcrumbs {
-            color: @colorHighLightsSeventh;
+            color: @color_gray_dark_10;
 
             & .current {
-                color: @colorBrand;
+                color: @color_brand_02;
                 font-weight: 700;
             }
 
             & * {
                 .fonts(14px; 20px; 300; normal);
-                color: @colorHighLightsSeventh;
+                color: @color_gray_dark_10;
             }
         }
 
@@ -1523,7 +1531,7 @@ body {
 }
 
 .bottom-ribbon {
-    background-color: @colorHighLightsSecond;
+    background-color: @color_gray_dark_02;
 
     &-wrap {
         display: flex;
@@ -1550,13 +1558,13 @@ body {
                 margin: 0 0 10px 0;
                 /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
                 .fonts(20px; 1.2; 700);
-                color: @colorHighLightsSecondInvert;
+                color: @color_gray_light_23;
             }
 
             & p {
                 /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
                 .fonts(14px; 24px; 300);
-                color: @colorHighLightsSecondInvert;
+                color: @color_gray_light_23;
             }
         }
     }
@@ -1573,12 +1581,12 @@ body {
         & > h2 {
             /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
             .fonts(53.7px; 0.8; 700);
-            color: @colorHighLightsInvert;
+            color: @color_white;
             margin-top: 146px;
             margin-left: 40px;
 
             & span:first-child {
-                color: @colorBrand;
+                color: @color_brand_02;
             }
 
             & span:last-child {
@@ -1601,7 +1609,7 @@ body {
             flex-direction: column;
             min-width: 374px;
             padding: 48px 28px;
-            background-color: @colorHighLightsSecond;
+            background-color: @color_gray_dark_02;
 
             & > .item {
                 display: flex;
@@ -1618,13 +1626,13 @@ body {
                     margin: 0;
                     /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
                     .fonts(20px; 1.2; 700);
-                    color: @colorHighLightsSecondInvert;
+                    color: @color_gray_light_23;
                 }
 
                 & p {
                     /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
                     .fonts(14px; 24px; 300);
-                    color: @colorHighLightsSecondInvert;
+                    color: @color_gray_light_23;
                 }
             }
         }
@@ -1653,7 +1661,7 @@ body {
 
             &:first-child {
                 border-width: 0 1px 0 0px;
-                border-color: @colorHighLightsInvert;
+                border-color: @color_white;
                 border-style: solid;
 
                 & > .item {
@@ -1707,7 +1715,7 @@ body {
                         /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
                         .fonts(14px; 24px);
                         text-transform: uppercase;
-                        color: @colorHighLightsSecond;
+                        color: @color_gray_dark_02;
                         text-align: center;
 
                         & span {
@@ -1730,16 +1738,16 @@ body {
         &-item {
             border-bottom: 2px;
             border-style: solid;
-            border-color: @colorBorder;
+            border-color: @color_gray_light_07;
             min-width: 38px;
             margin: 0 10px 0 0;
 
             &:hover {
-                border-color: @colorHighLightsSecond;
+                border-color: @color_gray_dark_02;
             }
 
             &-active {
-                border-color: @colorBrand;
+                border-color: @color_brand_02;
             }
         }
 
@@ -1755,7 +1763,7 @@ body {
 }
 
 .copyright {
-    background-color: @colorBackGround;
+    background-color: @color_gray_light_11;
 
     & .cont {
         display: flex;
@@ -1775,7 +1783,7 @@ body {
         padding: 0;
 
         &-item {
-            background-color: @colorHighLightsInvert;
+            background-color: @color_white;
             min-width: 32px;
             min-height: 32px;
             margin: 0 10px 0 0;
@@ -1783,23 +1791,23 @@ body {
             transition-duration: 300ms;
 
             &:hover {
-                background-color: @colorBrand;
+                background-color: @color_brand_02;
                 transition-duration: 200ms;
 
                 & a {
 
-                    color: @colorPictsActive;
+                    color: @color_gray_light_21;
                 }
             }
 
             &:active {
 
-                background-color: @colorHighLightsInvert;
+                background-color: @color_white;
                 opacity: 0.29;
                 transition-duration: 100ms;
 
                 & a {
-                    color: @colorPicts;
+                    color: @color_gray_light_01;
                 }
             }
         }
@@ -1808,7 +1816,7 @@ body {
             text-decoration: none;
             /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
             .fonts(15px; 32px);
-            color: @colorPicts;
+            color: @color_gray_light_01;
         }
 
     }
@@ -1816,7 +1824,7 @@ body {
     & .text {
         /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
         .fonts(15px; 42px);
-        color: @colorRegularThird;
+        color: @color_gray_dark_13;
     }
 }
 
@@ -1833,7 +1841,7 @@ body {
         & .logo p {
             /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
             .fonts(14px; 24px; 300);
-            color: @colorRegularSecond;
+            color: @color_gray_dark_15;
         }
 
         & .col {
@@ -1843,7 +1851,7 @@ body {
             & h2 {
                 /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
                 .fonts(18px; 26px; 700);
-                color: @colorBrand;
+                color: @color_brand_02;
             }
         }
     }
@@ -1856,12 +1864,12 @@ body {
             text-decoration: none;
             /* (@size: @textBaseSize; @lHeight: @textBaseLineHeight; @weight: @textBaseWeight; @ls: @textLS) */
             .fonts(16px; 40px);
-            color: @colorRegularSecond;
+            color: @color_gray_dark_15;
             display: block;
 
             &:hover {
-                color: @colorHighLightsSecond;
-                background-color: @colorSpacer;
+                color: @color_gray_dark_02;
+                background-color: @color_gray_light_16;
             }
         }
     }
@@ -1880,12 +1888,12 @@ body {
 
         &-line {
             justify-content: space-between;
-            border-bottom: 1px solid @colorHighLightsSixthInvert;
+            border-bottom: 1px solid @color_gray_light_14;
             display: flex;
             padding: 25px 0;
 
             &-item {
-                color: @colorHighLights;
+                color: @color_gray_dark_01;
                 .fonts(13px; 20px; 700; -0.015em);
                 text-transform: uppercase;
                 text-align: center;
@@ -1922,13 +1930,13 @@ body {
                             }
 
                             & p {
-                                color: @colorHighLightsNinth;
+                                color: @color_gray_dark_08;
                                 margin: 0;
                                 text-transform: none;
 
                                 & .item-title {
                                     font-weight: 400;
-                                    color: @colorBackGroundFourth;
+                                    color: @color_gray_dark_12;
                                 }
                             }
                         }
@@ -1939,7 +1947,7 @@ body {
                 &-quant,
                 &-ship,
                 &-subt {
-                    color: @colorHighLightsEight;
+                    color: @color_gray_dark_11;
                     display: flex;
                     justify-content: center;
                     align-items: center;
@@ -1953,10 +1961,10 @@ body {
                     & a {
                         text-decoration: none;
 
-                        color: @colorX;
+                        color: @color_gray_light_03;
 
                         &:hover {
-                            color: @colorHighLightsFourth;
+                            color: @color_gray_dark_07;
                         }
                     }
                 }
@@ -1965,7 +1973,7 @@ body {
                     max-width: 54px;
                     -moz-appearance: textfield;
                     text-align: center;
-                    border: 1px solid @colorHighLightsSixthInvert;
+                    border: 1px solid @color_gray_light_14;
 
                     &::-webkit-outer-spin-button,
                     &::-webkit-inner-spin-button {
@@ -2045,7 +2053,7 @@ body {
                 & .total {
                     &-sub {
                         .fonts(11px; 1.2; 400; normal);
-                        color: @colorHighLightsFourth;
+                        color: @color_gray_dark_07;
                         margin: 0 0 10px 0;
                     }
 
@@ -2053,16 +2061,16 @@ body {
                         margin: 0 0 16px 0;
                         .fonts(16px; 1.2; 700; normal);
                         padding-bottom: 16px;
-                        color: @colorHighLights;
-                        border-bottom: 1px solid @colorGreyAgain;
+                        color: @color_gray_dark_01;
+                        border-bottom: 1px solid @color_gray_light_10;
 
                         & .brand {
-                            color: @colorBrand;
+                            color: @color_brand_02;
                         }
                     }
                 }
 
-                background-color: @colorBackGroundTenth;
+                background-color: @color_gray_light_19;
                 padding: 43px;
             }
         }
@@ -2071,9 +2079,9 @@ body {
 
 
 .top-slider {
-    background-color: @colorHighLightsSixthInvert;
+    background-color: @color_gray_light_14;
     margin-bottom: 42px;
-    border-color: @colorHighLightsSixthInvert;
+    border-color: @color_gray_light_14;
     border-bottom-style: solid;
     border-width: 1px 0 1px 0;
 
@@ -2099,8 +2107,8 @@ body {
 
 .product-adjust {
     &-wrap {
-        border: 1px solid @colorHighLightsSixthInvert;
-        background-color: @colorHighLightsInvert;
+        border: 1px solid @color_gray_light_14;
+        background-color: @color_white;
         position: relative;
         margin-top: -85px;
         display: flex;
@@ -2109,9 +2117,9 @@ body {
         padding: 0 260px;
 
         & .collection-selector {
-            color: @colorBrand;
+            color: @color_brand_02;
             margin-top: 73px;
-            border-bottom: 1px solid @colorHighLightsSixthInvert;
+            border-bottom: 1px solid @color_gray_light_14;
 
             & .line {
                 &:first-child {
@@ -2128,11 +2136,11 @@ body {
                         display: block;
 
                         &:hover {
-                            border-bottom: 2px solid @colorBrand;
+                            border-bottom: 2px solid @color_brand_02;
                         }
 
                         &.active {
-                            border-bottom: 3px solid @colorBrand;
+                            border-bottom: 3px solid @color_brand_02;
                         }
                     }
 
@@ -2143,12 +2151,12 @@ body {
         & h3 {
             .fonts(18px; 24px; 900; normal);
             text-transform: uppercase;
-            color: @colorDarkGrey;
+            color: @color_gray_dark_06;
             margin-bottom: 47px;
         }
 
         & .description {
-            color: @colorGreyThird;
+            color: @color_gray_dark_09;
             text-align: center;
             .fonts(14px; 24px; 300; normal);
         }
@@ -2156,7 +2164,7 @@ body {
         & .char-wrap {
 
             width: 100%;
-            border-bottom: 1px solid @colorGreyAgain;
+            border-bottom: 1px solid @color_gray_light_10;
             margin-bottom: 63px;
             padding-bottom: 43px;
 
@@ -2166,20 +2174,20 @@ body {
                     display: flex;
 
                     &:first-child {
-                        color: @colorGreyFourth;
+                        color: @color_gray_light_02;
                         .fonts(14px; 24px; 700; normal);
                         justify-content: space-between;
                         margin-bottom: 22px;
 
                         & .type {
-                            color: @colorDarkGreySecond;
+                            color: @color_gray_dark_04;
                         }
                     }
 
                     &:last-child {
                         justify-content: center;
                         .fonts(24px; 24px; 700; normal);
-                        color: @colorBrand;
+                        color: @color_brand_02;
                     }
                 }
             }
@@ -2194,7 +2202,7 @@ body {
 
                 & .col {
                     & h3 {
-                        color: @colorDarkGreySecond;
+                        color: @color_gray_dark_04;
                         .fonts(14px; 24px; 700; normal);
                         padding: 15px 0;
                         margin: 0;
@@ -2204,8 +2212,8 @@ body {
                     select {
                         width: 144px;
                         padding: 10px;
-                        border: 1px solid @colorHighLightsSixthInvert;
-                        color: @colorGreyFith;
+                        border: 1px solid @color_gray_light_14;
+                        color: @color_gray_light_04;
                         .fonts(13px; 24px; 400; normal);
                     }
 
@@ -2265,14 +2273,14 @@ body {
                 & .login {
                     & input {
                         display: block;
-                        border: 1px solid @colorHighLightsSixthInvert;
+                        border: 1px solid @color_gray_light_14;
                         line-height: 41px;
                         margin: 16px 0;
                         width: 100%;
                     }
 
                     & .req-color {
-                        color: @colorReqFields;
+                        color: @color_red_01;
                     }
 
                     & .btn-wrap {
@@ -2299,7 +2307,7 @@ body {
 
         & summary {
 
-            color: @colorHighLights;
+            color: @color_gray_dark_01;
             .fonts(16px; 1.2; 700; normal);
 
             &::-webkit-details-marker {
@@ -2309,24 +2317,24 @@ body {
 
         & h3 {
             .fonts(13px; 1.2; 400; normal);
-            color: @colorHighLights;
+            color: @color_gray_dark_01;
             text-transform: uppercase;
         }
 
         & p.text-reg {
             .fonts(13px; 20px; 400; normal);
-            color: @colorGreySixth;
+            color: @color_gray_dark_19;
             margin-bottom: 32px;
         }
 
         & p.text-adv {
             .fonts(13px; 20px; 400; normal);
-            color: @colorGreySixth;
+            color: @color_gray_dark_19;
         }
 
         padding-bottom: 28px;
         margin-bottom: 28px;
-        border-bottom: 1px solid @colorRegularForth;
+        border-bottom: 1px solid @color_gray_light_12;
     }
 
     padding: 32px 15px 90px 15px;
