@@ -63,6 +63,22 @@
 @text_w: 400;
 @text_ls: normal;
 
+
+* {
+    box-sizing: border-box;
+    font-family: 'Lato', sans-serif;
+}
+
+body {
+    margin: 0;
+}
+
+.clear-fix:after {
+    content: "";
+    display: table;
+    clear: both;
+}
+
 .fonts(@fs: @text_fs; @lh: @text_lh; @w: @text_w; @ls: @text_ls) {
     font-size: @fs;
     line-height: @lh;
@@ -70,24 +86,26 @@
     letter-spacing: @ls;
 }
 
-.btn-browse(@btn_h; @fs; @lh; @color_in; @color_t; @color_ic; @bor_c; @bor_c2; @bor_th) {
+/*.btn-browse(38px; 36px; @text_fs; 1px; @color_gray_dark_01; @color_gray_dark_14; @color_gray_dark_17; @color_gray_light_11; @color_gray_light_12 );*/
+
+.btn-browse(@btn_h; @lh; @fs; @bor_th; @color_t; @color_ic; @color_in; @bor_c; @bor_c2) {
     &-browse {
         &__cont {
-            display: flex;
-            align-items: center;
+            float: left;
             border: @bor_th solid @bor_c;
             border-radius: 3px;
-            width: min-content;
+            height: @btn_h;
+
 
             & .form-search {
-                display: flex;
-                align-items: center;
+                float: left;
 
                 &__input {
                     color: @color_in;
                     .fonts(@fs; @lh; 300; 0.025em);
+                    height: @lh;
                     border: none;
-                    padding: ((@btn_h - @lh)/2) 16px;
+                    padding: (@btn_h - @lh - @bor_th*2) 16px;
                     border-right: @bor_th solid @bor_c2;
                     border-left: @bor_th solid @bor_c;
 
@@ -96,7 +114,8 @@
                     }
 
                     &:focus {
-                        outline: @bor_th solid @color_brand_01;
+                        outline: none;
+                        box-shadow: inset 0px 0px 0px @bor_th @color_brand_01;
                         transition: 100ms;
                         color: @color_brand_01;
 
@@ -119,7 +138,7 @@
                 &__btn {
                     color: @color_in;
                     .fonts(@text_fs; @lh);
-                    padding: ((@btn_h - @lh)/2) 12px;
+                    padding: ((@lh - @bor_th*2 - @fs)/2) 12px;
 
                     &:hover {
                         background-color: @color_brand_02;
@@ -135,13 +154,14 @@
             }
         }
 
-        .btn-browse__ddc {
+        &__ddc {
             min-width: 300px;
             min-height: 300px;
             display: none;
             position: absolute;
             background-color: antiquewhite;
         }
+
 
         &__text {
             color: @color_t;
@@ -156,11 +176,12 @@
         }
 
         &__link {
-            display: flex;
-            align-items: center;
+
+            float: left;
             background-color: @color_gray_light_05;
             background-image: @color_gradient_gray_light_20;
             position: relative;
+
 
             &:hover {
                 background-image: @color_gradient_brand_02;
@@ -171,7 +192,70 @@
                     color: @color_white;
                 }
 
-                & .btn-browse__cont .btn-browse__ddc {
+                & .btn-browse__ddc {
+                    top: 100%;
+                    display: block;
+                    transition: 100ms;
+                }
+            }
+        }
+    }
+}
+
+.btn-account(@btn_h; @fs; @lh; @color_t; @color_ic; @bor_c2; @bor_th) {
+    &-account {
+        &__cont {
+            float: left;
+            border: @bor_th solid @bor_c2;
+            border-radius: 3px;
+            height: @btn_h;
+
+
+
+            & a {
+                text-decoration: none;
+            }
+        }
+
+        &__ddc {
+            min-width: 300px;
+            min-height: 300px;
+            display: none;
+            position: absolute;
+            background-color: antiquewhite;
+        }
+
+
+        &__text {
+            color: @color_t;
+            .fonts(@fs; @lh; 300; 0.025em);
+            padding: ((@btn_h - @lh)/2) 0 ((@btn_h - @lh)/2) 16px;
+        }
+
+        &__icon {
+            color: @color_ic;
+            .fonts(@fs; @lh);
+            padding: ((@btn_h - @lh)/2) 8px;
+        }
+
+        &__link {
+
+            float: left;
+            background-color: @color_brand_02;
+            position: relative;
+
+
+            &:hover {
+                background-color: @color_white;
+                transition: 100ms;
+
+                & .btn-account__text,
+                .btn-account__icon {
+                    color: @color_brand_02;
+                }
+
+                & .btn-account__ddc {
+                    top: 100%;
                     display: block;
                     transition: 100ms;
                 }
@@ -181,5 +265,7 @@
 }
 
 .btn {
-    .btn-browse(38px; @text_fs; 32px; @color_gray_dark_17; @color_gray_dark_01; @color_gray_dark_14; @color_gray_light_11; @color_gray_light_12; 1px);
+    display: flex;
+    .btn-browse(38px; 36px; @text_fs; 1px; @color_gray_dark_01; @color_gray_dark_14; @color_gray_dark_17; @color_gray_light_11; @color_gray_light_12 );
+    .btn-account(38px; @text_fs; 36px; @color_white; @color_white; @color_brand_02; 1px);
 }
