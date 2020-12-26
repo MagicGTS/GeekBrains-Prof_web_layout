@@ -86,73 +86,109 @@ body {
     letter-spacing: @ls;
 }
 
-/*.btn-browse(38px; 36px; @text_fs; 1px; @color_gray_dark_01; @color_gray_dark_14; @color_gray_dark_17; @color_gray_light_11; @color_gray_light_12 );*/
+/*.btn-browse(   @color_gray_light_11; @color_gray_light_12 );*/
 
-.btn-browse(@btn_h; @lh; @fs; @bor_th; @color_t; @color_ic; @color_in; @bor_c; @bor_c2) {
+.btn-browse() {
+    @btn_h: 38px;
+    @lh: 36px;
+    @fs: @text_fs;
+    @bor_th: 1px;
+    @color_t: @color_gray_dark_01;
+    @color_ic: @color_gray_dark_14;
+    @color_in: @color_gray_dark_17;
+    @color_back: @color_gray_light_05;
+    @color_back_img: @color_gradient_gray_light_20;
+    @color_t__focus: @color_gray_dark_01;
+    @color_ic__focus: @color_gray_dark_14;
+    @color_in__focus: @color_brand_02;
+    @color_in_shad__focus: @color_brand_01;
+    @color_bt__focus: @color_white;
+    @color_back_img__hover: @color_gradient_brand_02;
+    @bor_c: @color_gray_light_11;
+    @bor_c2: @color_gray_light_12;
+    @bor_rad: 3px;
+    @pad_hor: 16px;
+    @pad_in: (@btn_h - @lh - @bor_th*2) @pad_hor;
+    @pad_btn: 0 12px;
+    @pad_txt: ((@btn_h - @lh)/2) 0 ((@btn_h - @lh)/2) @pad_hor;
+    @pad_ico: ((@btn_h - @lh)/2) (@pad_hor/2);
+
     &-browse {
-        &__cont {
+        display: inline-block;
+        height: @btn_h;
+        min-width: 302px;
+
+        & .form-search {
             float: left;
-            border: @bor_th solid @bor_c;
-            border-radius: 3px;
-            height: @btn_h;
 
+            &__input {
+                color: @color_in;
+                .fonts(@fs; @lh; 300; 0.025em);
+                height: @btn_h;
+                border-style: solid;
+                border-color: @bor_c;
+                border-top-width: @bor_th;
+                border-bottom-width: @bor_th;
+                border-left-width: 0;
+                border-right-width: 0;
+                @pad_calc: (@btn_h - @lh - @bor_th*2);
+                padding: @pad_calc (@pad_hor + @bor_th ) @pad_calc (@pad_hor + @bor_th);
 
-            & .form-search {
-                float: left;
-
-                &__input {
+                &::placeholder {
                     color: @color_in;
-                    .fonts(@fs; @lh; 300; 0.025em);
-                    height: @lh;
-                    border: none;
-                    padding: (@btn_h - @lh - @bor_th*2) 16px;
-                    border-right: @bor_th solid @bor_c2;
-                    border-left: @bor_th solid @bor_c;
+                }
+
+                &:focus {
+                    outline: none;
+                    //box-shadow: inset 0px 0px 0px @bor_th @color_in_shad__focus;
+
+                    border-style: solid;
+                    border-color: @color_in_shad__focus;
+                    padding: @pad_in;
+                    border-left-width: @bor_th;
+                    border-right-width: @bor_th;
+                    transition: 100ms;
+                    color: @color_in__focus;
 
                     &::placeholder {
                         color: @color_in;
                     }
-
-                    &:focus {
-                        outline: none;
-                        box-shadow: inset 0px 0px 0px @bor_th @color_brand_01;
-                        transition: 100ms;
-                        color: @color_brand_01;
-
-                        &::placeholder {
-                            color: @color_in;
-                        }
-                    }
-
-                    &:hover {
-                        color: @color_brand_01;
-                        transition: 100ms;
-
-                        &::placeholder {
-                            color: @color_brand_01;
-                            transition: 100ms;
-                        }
-                    }
                 }
 
-                &__btn {
-                    color: @color_in;
-                    .fonts(@text_fs; @lh);
-                    padding: ((@lh - @bor_th*2 - @fs)/2) 12px;
+                &:hover {
+                    color: @color_in__focus;
+                    transition: 100ms;
 
-                    &:hover {
-                        background-color: @color_brand_02;
+                    &::placeholder {
+                        color: @color_in__focus;
                         transition: 100ms;
-                        color: @color_white;
-
                     }
                 }
             }
 
-            & a {
-                text-decoration: none;
+            &__btn {
+                color: @color_in;
+                .fonts(@text_fs; @lh);
+                padding: @pad_btn;
+                border: @bor_th solid @bor_c;
+                border-radius: 0 @bor_rad @bor_rad 0;
+                display: inline-block;
+
+                &:hover {
+                    background-color: @color_in__focus;
+                    border-color: @color_in__focus;
+                    border-radius: @bor_rad;
+                    transition: 100ms;
+                    color: @color_bt__focus;
+
+                }
             }
         }
+
+        & a {
+            text-decoration: none;
+        }
+
 
         &__ddc {
             min-width: 300px;
@@ -166,34 +202,38 @@ body {
         &__text {
             color: @color_t;
             .fonts(@fs; @lh; 300; 0.025em);
-            padding: ((@btn_h - @lh)/2) 0 ((@btn_h - @lh)/2) 16px;
+            padding: @pad_txt;
         }
 
         &__icon {
             color: @color_ic;
             .fonts(@fs; @lh);
-            padding: ((@btn_h - @lh)/2) 8px;
+            padding: @pad_ico;
         }
 
         &__link {
 
             float: left;
-            background-color: @color_gray_light_05;
-            background-image: @color_gradient_gray_light_20;
+            background-color: @color_back;
+            background-image: @color_back_img;
             position: relative;
+            border: @bor_th solid @bor_c;
+            border-radius: @bor_rad 0 0 @bor_rad;
 
 
             &:hover {
-                background-image: @color_gradient_brand_02;
+                background-image: @color_back_img__hover;
+                border-radius: @bor_rad;
+                border-color: @color_in__focus;
                 transition: 100ms;
 
                 & .btn-browse__text,
                 .btn-browse__icon {
-                    color: @color_white;
+                    color: @color_bt__focus;
                 }
 
                 & .btn-browse__ddc {
-                    top: 100%;
+                    top: calc(100% + @bor_th);
                     display: block;
                     transition: 100ms;
                 }
@@ -202,20 +242,34 @@ body {
     }
 }
 
-.btn-account(@btn_h; @fs; @lh; @color_t; @color_ic; @bor_c2; @bor_th) {
+.btn-account() {
+    @btn_h: 38px;
+    @lh: 36px;
+    @fs: @text_fs;
+    @bor_th: 1px;
+    @color_t: @color_white;
+    @color_ic: @color_white;
+    @color_back: @color_brand_02;
+    @color_back_img: @color_gradient_brand_02;
+    @color_t__focus: @color_gray_dark_01;
+    @color_ic__focus: @color_gray_dark_14;
+    @color_bt__focus: @color_gray_dark_14;
+    @color_back_img__hover: @color_gradient_gray_light_20;
+    @bor_c: @color_brand_02;
+    @bor_rad: 3px;
+    @pad_vert: 16px;
+    @pad_txt: ((@btn_h - @lh)/2) 0 ((@btn_h - @lh)/2) @pad_vert;
+    @pad_ico: ((@btn_h - @lh)/2) (@pad_vert/2);
+
     &-account {
-        &__cont {
-            float: left;
-            border: @bor_th solid @bor_c2;
-            border-radius: 3px;
-            height: @btn_h;
+        display: inline-block;
+        height: @btn_h;
 
 
-
-            & a {
-                text-decoration: none;
-            }
+        & a {
+            text-decoration: none;
         }
+
 
         &__ddc {
             min-width: 300px;
@@ -229,43 +283,464 @@ body {
         &__text {
             color: @color_t;
             .fonts(@fs; @lh; 300; 0.025em);
-            padding: ((@btn_h - @lh)/2) 0 ((@btn_h - @lh)/2) 16px;
+            padding: @pad_txt;
         }
 
         &__icon {
             color: @color_ic;
             .fonts(@fs; @lh);
-            padding: ((@btn_h - @lh)/2) 8px;
+            padding: @pad_ico;
         }
 
         &__link {
 
             float: left;
-            background-color: @color_brand_02;
+            background-color: @color_back;
+            background-image: @color_back_img;
             position: relative;
+            border: @bor_th solid @bor_c;
+            border-radius: @bor_rad;
 
 
             &:hover {
-                background-color: @color_white;
+                background-image: @color_back_img__hover;
+                border-color: @color_ic__focus;
                 transition: 100ms;
 
                 & .btn-account__text,
                 .btn-account__icon {
-                    color: @color_brand_02;
+                    color: @color_bt__focus;
                 }
 
                 & .btn-account__ddc {
-                    top: 100%;
+                    top: calc(100% + @bor_th);
                     display: block;
                     transition: 100ms;
                 }
+            }
+        }
+    }
+}
+
+.btn-sqr_dl() {
+    @btn_h: 50px;
+    @lh: 48px;
+    @fs: @text_fs;
+    @bor_th: 1px;
+    @color_t: @color_gray_dark_05;
+    @color_back: @color_white;
+    @color_t__focus: @color_gray_dark_01;
+    @color_bt__focus: @color_white;
+    @color_back_focus: @color_brand_02;
+    @bor_c: @color_gray_light_14;
+    @bor_rad: 0;
+    @pad_txt: 0 20px;
+
+    &-sqr_dl {
+        min-width: 115px;
+        height: @btn_h;
+
+
+        & a {
+            text-decoration: none;
+            padding: @pad_txt;
+        }
+
+        &__text {
+            color: @color_t;
+            .fonts(@fs; @lh; 700; normal);
+            text-transform: uppercase;
+        }
+
+        &__link {
+            display: block;
+            text-align: center;
+            background-color: @color_back;
+            position: relative;
+            border: @bor_th solid @bor_c;
+            border-radius: @bor_rad;
+
+
+            &:hover {
+                border-color: @color_back_focus;
+                transition: 100ms;
+                background-color: @color_back_focus;
+
+                & .btn-sqr_dl__text {
+                    color: @color_bt__focus;
+                }
+
+            }
+        }
+    }
+}
+
+.btn-sqr_bw() {
+    @btn_h: 50px;
+    @lh: 48px;
+    @fs: @text_fs;
+    @bor_th: 1px;
+    @color_t: @color_brand_02;
+    @color_back: @color_white;
+    @color_t__focus: @color_gray_dark_01;
+    @color_bt__focus: @color_white;
+    @color_back_focus: @color_brand_02;
+    @bor_c: @color_brand_02;
+    @bor_rad: 0;
+    @pad_txt: 0 20px;
+
+    &-sqr_bw {
+        min-width: 115px;
+        height: @btn_h;
+
+
+        & a {
+            text-decoration: none;
+            padding: @pad_txt;
+        }
+
+        &__text {
+            color: @color_t;
+            .fonts(@fs; @lh; 700; normal);
+            text-transform: uppercase;
+        }
+
+        &__link {
+            display: block;
+            text-align: center;
+            background-color: @color_back;
+            position: relative;
+            border: @bor_th solid @bor_c;
+            border-radius: @bor_rad;
+
+
+            &:hover {
+                border-color: @color_back_focus;
+                transition: 100ms;
+                background-color: @color_back_focus;
+
+                & .btn-sqr_bw__text {
+                    color: @color_bt__focus;
+                }
+
+            }
+        }
+    }
+}
+
+.btn-sqr_ba() {
+    @btn_h: 48px;
+    @lh: 46px;
+    @fs: @text_fs;
+    @bor_th: 1px;
+    @color_t: @color_white;
+    @color_ic: @color_white;
+    @color_back: @color_brand_02;
+    @color_back_img: @color_gradient_brand_02;
+    @color_t__focus: @color_gray_dark_01;
+    @color_ic__focus: @color_gray_dark_14;
+    @color_bt__focus: @color_gray_dark_14;
+    @color_back_img__hover: @color_gradient_gray_light_20;
+    @bor_c: @color_brand_02;
+    @bor_rad: 0px;
+    @pad_hor: 16px;
+    @pad_txt: ((@btn_h - @lh)/2) 0 ((@btn_h - @lh)/2) @pad_hor;
+    @pad_ico: ((@btn_h - @lh)/2) @pad_hor (@pad_hor/2) (@pad_hor/2);
+
+    &-sqr_ba {
+        display: inline-block;
+        height: @btn_h;
+
+
+        & a {
+            text-decoration: none;
+        }
+
+
+
+
+        &__text {
+            color: @color_t;
+            .fonts(@fs; @lh; 300; 0.025em);
+            padding: @pad_txt;
+        }
+
+        &__icon {
+            color: @color_ic;
+            .fonts(@fs; @lh);
+            padding: @pad_ico;
+        }
+
+        &__link {
+
+            float: left;
+            background-color: @color_back;
+            background-image: @color_back_img;
+            position: relative;
+            border: @bor_th solid @bor_c;
+            border-radius: @bor_rad;
+
+
+            &:hover {
+                background-image: @color_back_img__hover;
+                border-color: @color_ic__focus;
+                transition: 100ms;
+
+                & .btn-sqr_ba__text,
+                .btn-sqr_ba__icon {
+                    color: @color_bt__focus;
+                }
+
+            }
+        }
+    }
+}
+
+.btn-subs() {
+    @btn_h: 46px;
+    @lh: 44px;
+    @fs: @text_fs;
+    @bor_th: 1px;
+    @color_t: @color_brand_02;
+    @color_ic: @color_white;
+    @color_in: @color_gray_dark_02;
+    @color_back: @color_gray_light_09;
+    @color_t__focus: @color_gray_dark_01;
+    @color_ic__focus: @color_gray_light_09;
+    @color_in__focus: @color_white;
+    @color_in_shad__focus: @color_brand_01;
+    @color_bt__focus: @color_gray_dark_08;
+    @bor_c: @color_gray_light_09;
+    @bor_c2: @color_brand_02;
+    @bor_rad: 23px;
+    @pad_hor: 23px;
+    @pad_in: (@btn_h - @lh - @bor_th*2) @pad_hor;
+    @pad_btn: 0 12px;
+    @pad_txt: ((@btn_h - @lh)/2) 0 ((@btn_h - @lh)/2) @pad_hor;
+    @pad_ico: ((@btn_h - @lh)/2) (@pad_hor/2);
+
+    &-subs {
+        display: inline-block;
+        height: @btn_h;
+        min-width: 302px;
+
+        & .form-subs {
+            float: left;
+
+            &__input {
+                color: @color_in;
+                .fonts(@fs; @lh);
+                height: @btn_h;
+                border-style: solid;
+                border-color: @bor_c;
+                border-top-width: @bor_th;
+                border-bottom-width: @bor_th;
+                border-left-width: 0;
+                border-right-width: 0;
+                background-color: @color_back;
+                border: @bor_th solid @bor_c;
+                border-radius: @bor_rad 0 0 @bor_rad;
+                @pad_calc: (@btn_h - @lh - @bor_th*2);
+                padding: @pad_calc (@pad_hor + @bor_th ) @pad_calc (@pad_hor + @bor_th);
+
+                &::placeholder {
+                    color: @color_in;
+                }
+
+                &:focus {
+                    outline: none;
+                    background-color: @color_ic;
+                    border-style: solid;
+                    border-color: @color_in_shad__focus;
+                    border-left-width: @bor_th;
+                    border-right-width: @bor_th;
+                    transition: 100ms;
+
+                    &::placeholder {
+                        color: @color_in;
+                    }
+                }
+
+                &:hover {
+                    color: @color_in__focus;
+                    transition: 100ms;
+                    background-color: @color_bt__focus;
+                    border-color: @color_bt__focus;
+
+                    &::placeholder {
+                        color: @color_in__focus;
+                        transition: 100ms;
+                    }
+                }
+            }
+
+            &__btn {
+                color: @color_ic;
+                .fonts(@text_fs; @lh);
+                padding: @pad_btn;
+                background-color: @color_t;
+                border-style: solid;
+                border-color: @bor_c2;
+                border-top-width: @bor_th;
+                border-bottom-width: @bor_th;
+                border-left-width: 0;
+                border-right-width: 0;
+
+                border-radius: 0 @bor_rad @bor_rad 0;
+                display: inline-block;
+
+                &:hover {
+                    border-style: solid;
+                    background-color: @color_ic__focus;
+                    border-color: @color_ic__focus;
+                    transition: 100ms;
+                    color: @color_bt__focus;
+
+                }
+            }
+        }
+
+        & a {
+            text-decoration: none;
+        }
+    }
+}
+
+.btn-sqr_adc() {
+    @btn_h: 55px;
+    @lh: 53px;
+    @fs: 16px;
+    @bor_th: 1px;
+    @color_t: @color_brand_02;
+    @color_ic: @color_white;
+    @color_back: @color_white;
+    @color_t__focus: @color_white;
+    @color_ic__focus: @color_brand_02;
+    @color_bt__focus: @color_white;
+    @color_back_img__hover: @color_brand_02;
+    @bor_c: @color_brand_02;
+    @bor_rad: 0px;
+    @pad_hor: 5px;
+
+    &-sqr_adc {
+        height: @btn_h;
+
+
+        & a {
+            text-decoration: none;
+        }
+
+
+
+
+        &__text {
+            color: @color_t;
+            .fonts(@fs; @lh; 700; normal);
+            padding: 0 16px 0 @pad_hor;
+        }
+
+        &__icon {
+            color: @color_ic;
+            .fonts(@fs; @lh);
+            padding: 0 @pad_hor 0 16px;
+        }
+
+        &__link {
+
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: @color_back;
+            position: relative;
+            border: @bor_th solid @bor_c;
+            border-radius: @bor_rad;
+
+
+            &:hover {
+                background-color: @color_back_img__hover;
+                border-color: @color_ic__focus;
+                transition: 100ms;
+
+                & .btn-sqr_adc__text {
+                    color: @color_bt__focus;
+
+                }
+
+                & .btn-sqr_adc__icon {
+                    display: none;
+
+                }
+
+            }
+        }
+    }
+}
+
+.btn-sqr_ar() {
+    @btn_h: 47px;
+    @lh: 24px;
+    @fs: 24px;
+    @bor_th: 1px;
+    @color_t: @color_white;
+    @color_ic: @color_white;
+    @color_back: @color_gray_light_06;
+    @color_t__focus: @color_gray_dark_01;
+    @color_ic__focus: @color_gray_dark_14;
+    @color_bt__focus: @color_white;
+    @color_back_img__hover: @color_gray_light_02;
+    @bor_c: @color_gray_light_06;
+    @bor_rad: 0px;
+    @pad_hor: 20px;
+    @pad_txt: ((@btn_h - @lh)/2) 0 ((@btn_h - @lh)/2) @pad_hor;
+    @pad_ico: (@pad_hor/2) (@pad_hor - 2px) (@pad_hor/2) (@pad_hor - 2px);
+
+    &-sqr_ar {
+        display: inline-block;
+        height: @btn_h;
+        width: @btn_h;
+
+        & a {
+            text-decoration: none;
+        }
+
+
+        &__icon {
+            color: @color_ic;
+            .fonts(@fs; @lh);
+        }
+
+        &__link {
+
+            float: left;
+            background-color: @color_back;
+            position: relative;
+            border: @bor_th solid @bor_c;
+            border-radius: @bor_rad;
+            padding: @pad_ico;
+
+
+            &:hover {
+                background-color: @color_back_img__hover;
+                border-color: @color_ic__focus;
+                transition: 100ms;
+
+                & .btn-sqr_ar__icon {
+                    color: @color_bt__focus;
+                }
+
             }
         }
     }
 }
 
 .btn {
-    display: flex;
-    .btn-browse(38px; 36px; @text_fs; 1px; @color_gray_dark_01; @color_gray_dark_14; @color_gray_dark_17; @color_gray_light_11; @color_gray_light_12 );
-    .btn-account(38px; @text_fs; 36px; @color_white; @color_white; @color_brand_02; 1px);
+
+    .btn-browse();
+    .btn-account();
+    .btn-sqr_dl();
+    .btn-sqr_bw();
+    .btn-sqr_ba();
+    .btn-subs();
+    .btn-sqr_adc();
+    .btn-sqr_ar();
 }
