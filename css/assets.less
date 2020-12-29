@@ -305,11 +305,13 @@ body {
         display: inline-block;
         height: @btn_h;
         min-width: 302px;
+        position: relative;
 
         & .form-search {
             float: left;
 
             &__input {
+                float: left;
                 color: @color_in;
                 .fonts(@fs; @lh; 300; 0.025em);
                 height: @btn_h;
@@ -355,6 +357,7 @@ body {
             }
 
             &__btn {
+                float: left;
                 color: @color_in;
                 .fonts(@text_fs; @lh);
                 padding: @pad_btn;
@@ -377,13 +380,47 @@ body {
             text-decoration: none;
         }
 
+        &__hover-wrap {
+            float: left;
+
+            &:hover {
+                .btn-browse__ddc {
+                    top: calc(100% + @bor_th);
+                    opacity: 1;
+                    visibility: visible;
+                    transition: opacity 0.5s ease-out;
+                }
+
+                .btn-browse__link {
+                    background-image: @color_back_img__hover;
+                    border-radius: @bor_rad;
+                    border-color: @color_in__focus;
+                    transition: 100ms;
+
+                    .btn-browse__text,
+                    .btn-browse__icon {
+                        color: @color_bt__focus;
+                    }
+                }
+
+            }
+        }
 
         &__ddc {
-            min-width: 300px;
-            min-height: 300px;
-            display: none;
+            display: block;
             position: absolute;
-            background-color: antiquewhite;
+            opacity: 0;
+            visibility: hidden;
+            width: 100px;
+            height: 100px;
+            z-index: 1;
+
+            transition-delay: 500ms;
+
+            &:hover {
+                opacity: 1;
+                visibility: visible;
+            }
         }
 
 
@@ -404,28 +441,8 @@ body {
             float: left;
             background-color: @color_back;
             background-image: @color_back_img;
-            position: relative;
             border: @bor_th solid @bor_c;
             border-radius: @bor_rad 0 0 @bor_rad;
-
-
-            &:hover {
-                background-image: @color_back_img__hover;
-                border-radius: @bor_rad;
-                border-color: @color_in__focus;
-                transition: 100ms;
-
-                & .btn-browse__text,
-                .btn-browse__icon {
-                    color: @color_bt__focus;
-                }
-
-                & .btn-browse__ddc {
-                    top: calc(100% + @bor_th);
-                    display: block;
-                    transition: 100ms;
-                }
-            }
         }
     }
 
@@ -444,26 +461,60 @@ body {
         @color_bt__focus: @color_gray_dark_14;
         @color_back_img__hover: @color_gradient_gray_light_20;
         @bor_c: @color_brand_02;
-        @bor_rad: 3px;
+        @bor_rad: 0px;
         @pad_vert: 16px;
         @pad_txt: ((@btn_h - @lh)/2) 0 ((@btn_h - @lh)/2) @pad_vert;
         @pad_ico: ((@btn_h - @lh)/2) (@pad_vert/2);
 
         display: inline-block;
         height: @btn_h;
-
+        min-width: 118px;
+        position: relative;
 
         & a {
             text-decoration: none;
         }
 
+        &__hover-wrap {
+            float: left;
+
+            &:hover {
+                .btn-account__link {
+                    background-image: @color_back_img__hover;
+                    border-color: @color_ic__focus;
+                    transition: 100ms;
+                }
+
+                .btn-account__text,
+                .btn-account__icon {
+                    color: @color_bt__focus;
+                }
+
+                .btn-account__ddc {
+                    top: calc(100% + @bor_th);
+                    display: block;
+                    transition: 100ms;
+
+                    opacity: 1;
+                    visibility: visible;
+                    transition: opacity 0.5s ease-out;
+                }
+            }
+        }
 
         &__ddc {
-            min-width: 300px;
-            min-height: 300px;
-            display: none;
+            display: block;
             position: absolute;
-            background-color: antiquewhite;
+            opacity: 0;
+            visibility: hidden;
+            z-index: 1;
+
+            transition-delay: 500ms;
+
+            &:hover {
+                opacity: 1;
+                visibility: visible;
+            }
         }
 
 
@@ -489,22 +540,7 @@ body {
             border-radius: @bor_rad;
 
 
-            &:hover {
-                background-image: @color_back_img__hover;
-                border-color: @color_ic__focus;
-                transition: 100ms;
 
-                & .btn-account__text,
-                .btn-account__icon {
-                    color: @color_bt__focus;
-                }
-
-                & .btn-account__ddc {
-                    top: calc(100% + @bor_th);
-                    display: block;
-                    transition: 100ms;
-                }
-            }
         }
     }
 
@@ -702,7 +738,7 @@ body {
         min-width: 302px;
 
         & .form-subs {
-            float: left;
+            display: inline-block;
 
             &__input {
                 color: @color_in;
@@ -719,6 +755,7 @@ body {
                 border-radius: @bor_rad 0 0 @bor_rad;
                 @pad_calc: (@btn_h - @lh - @bor_th*2);
                 padding: @pad_calc (@pad_hor + @bor_th ) @pad_calc (@pad_hor + @bor_th);
+                float: left;
 
                 &::placeholder {
                     color: @color_in;
@@ -762,7 +799,7 @@ body {
                 border-bottom-width: @bor_th;
                 border-left-width: 0;
                 border-right-width: 0;
-
+                float: left;
                 border-radius: 0 @bor_rad @bor_rad 0;
                 display: inline-block;
 
