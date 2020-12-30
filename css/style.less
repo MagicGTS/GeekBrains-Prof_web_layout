@@ -55,6 +55,8 @@
 /* Brand`s colors */
 @color_brand_01: #ef5b70;
 @color_brand_02: #f16d7f;
+@color_brand_03: #f06c7d0f;
+@color_brand_04: #f06c7d38;
 
 @color_gradient_brand_02: linear-gradient(180.0deg, #f16d7f 0%, #f06c7d 100%);
 /* default text`s parameters */
@@ -1345,11 +1347,10 @@ body {
                         transition: 300ms;
 
                         &:hover {
-                            background-color: @color_brand_02;
-                            color: @color_white;
-                            border-radius: 14px;
-                            padding-left: 20px;
-                            transition: 300ms;
+                            border-left: 5px solid @color_brand_02;
+                            background-color: @color_brand_03;
+                            padding-left: 10px;
+                            transition: 500ms;
                         }
                     }
                 }
@@ -1558,8 +1559,8 @@ body {
                     & .nav-link {
                         background-color: @color_brand_02;
                         color: @color_white;
-                        border-radius: 12px;
-                        transition: 300ms;
+                        border-bottom-color: @color_brand_01;
+                        transition: 500ms;
                     }
 
                     & .nav-item__ddc {
@@ -1643,11 +1644,11 @@ body {
 
                     &-item__hover-wrap {
                         &:hover a {
-                            background-color: @color_brand_02;
-                            color: @color_white;
-                            border-radius: 14px;
-                            padding-left: 20px;
-                            transition: 300ms;
+
+                            border-left: 5px solid @color_brand_02;
+                            background-color: @color_brand_03;
+                            padding-left: 10px;
+                            transition: 500ms;
                         }
 
 
@@ -2119,11 +2120,11 @@ footer {
             transition: 300ms;
 
             &:hover {
-                background-color: @color_brand_02;
-                color: @color_white;
-                border-radius: 14px;
-                padding-left: 20px;
-                transition: 300ms;
+
+                border-left: 5px solid @color_brand_02;
+                background-color: @color_brand_03;
+                padding-left: 10px;
+                transition: 500ms;
             }
 
         }
