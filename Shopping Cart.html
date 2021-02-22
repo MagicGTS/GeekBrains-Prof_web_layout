@@ -11,7 +11,45 @@
     <link rel="stylesheet" href="css/style.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Lato:wght@100;200;300;400;500;600;700;800&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/v4-shims.min.css" integrity="sha512-NfhLGuxy6G12XHj7/bvm0RC3jmR25RdpImn8P19aIMmN5pndO0fvIg78ihN2WIJtVRs+AYVrnYF4AipVikGPLg==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/solid.min.css" integrity="sha512-xIEmv/u9DeZZRfvRS06QVP2C97Hs5i0ePXDooLa5ZPla3jOgPT/w6CzoSMPuRiumP7A/xhnUBxRmgWWwU26ZeQ==" crossorigin="anonymous" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.2/css/fontawesome.min.css" integrity="sha512-shT5e46zNSD6lt4dlJHb+7LoUko9QZXTGlmWWx0qjI9UhQrElRb+Q5DM7SVte9G9ZNmovz2qIaV7IWv0xQkBkw==" crossorigin="anonymous" />
+    <script type="text/javascript" src="js/helpers.js"></script>
+    <script type="text/javascript" src="js/cart.js"></script>
+    <script type="text/javascript" src="js/catalog.js"></script>
+    <script type="text/javascript" src="js/init.js"></script>
+    <script type="text/javascript">
+        "use strict";
+        var cart2Render = {
+            15: {
+                amount: 2
+            },
+            16: {
+                amount: 2
+            },
+            17: {
+                amount: 2
+            }
+        };
+        var cart, catalog;
+
+        function go2StepTwo() {
+            document.getElementById("StepTwo").open = true;
+            document.getElementById("StepOne").open = false;
+        }
+
+        function go2StepThree() {
+            document.getElementById("StepThree").open = true;
+            document.getElementById("StepTwo").open = false;
+        }
+
+        function go2StepFour() {
+            document.getElementById("StepFour").open = true;
+            document.getElementById("StepThree").open = false;
+        }
+        document.addEventListener("DOMContentLoaded", pageInit);
+
+    </script>
 </head>
 
 <body>
@@ -57,32 +95,41 @@
                 </div>
             </section>
             <section class="cart">
-                <div class="btn-cart__wrap">
-                    <a href="Shopping%20Cart.html" class="btn-cart"><img src="img/cart.png" alt="">
+                <div id="cartSmall" class="btn-cart__wrap">
+                    <a href="Shopping%20Cart.html" class="btn-cart"><img src="img/cart_black.png" alt="">
                     </a>
+                    <div class="btn-cart__count">0</div>
                     <div class="btn-cart__ddc">
                         <ul class="btn-cart__ddc-list">
+                            <!-- Replaced by JavaScript
                             <li class="btn-cart__ddc-item">
-                                <div class="col"><a href="#"><img src="img/rectangle_24_1821.png" alt=""></a></div>
+                                <div class="col"><a href="#"><img src="img/cart_item_01.png" alt=""></a></div>
                                 <div class="col">
                                     <p>Rebox Zane</p>
                                     <p><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o" aria-hidden="true"></i></p>
-                                    <p>1 <span class="x-txt">x</span> $250</p>
+                                    <div>
+                                        <p class="price-count">1 <span class="x-txt">x</span> $250</p>
+                                        <p class="sub-total clear-fix"> = $250</p>
+                                    </div>
                                 </div>
-                                <div class="col"><a href="#"><i class="fa fa-times-circle"></i></a></div>
+                                <div class="col"><a href="#"><i class="fas fa-plus-circle"></i></a><a href="#"><i class="fa fa-times-circle"></i></a><a href="#"><i class="fas fa-minus-circle"></i></a></div>
                             </li>
                             <li class="btn-cart__ddc-item">
-                                <div class="col"><a href="#"><img src="img/rectangle_24_1830.png" alt=""></a></div>
+                                <div class="col"><a href="#"><img src="img/cart_item_02.png" alt=""></a></div>
                                 <div class="col">
                                     <p>Rebox Zane</p>
                                     <p><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star"></i><i class="fa fa-star-half-o" aria-hidden="true"></i></p>
-                                    <p>1 <span class="x-txt">x</span> $250</p>
+                                    <div>
+                                        <p class="price-count">1 <span class="x-txt">x</span> $250</p>
+                                        <p class="sub-total clear-fix"> = $250</p>
+                                    </div>
                                 </div>
-                                <div class="col"><a href="#"><i class="fa fa-times-circle"></i></a></div>
+                                <div class="col"><a href="#"><i class="fas fa-plus-circle"></i></a><a href="#"><i class="fa fa-times-circle"></i></a><a href="#"><i class="fas fa-minus-circle"></i></a></div>
                             </li>
+                            -->
                         </ul>
                         <div class="btn-cart__ddc-total">
-                            <div class="total-grand"><span>TOTAL</span><span>$500.00</span></div>
+                            <div class="total-grand"><span>TOTAL</span><span class="total-grand-summ">$0.00</span></div>
                             <div class="btn-sqr_bw"><a href="Checkout.html" class="btn-sqr_bw__link"><span class="btn-sqr_bw__text">Checkout</span></a>
                             </div>
                             <div class="btn-sqr_dl"><a href="Shopping%20Cart.html" class="btn-sqr_dl__link"><span class="btn-sqr_dl__text">Go to cart</span></a>
@@ -189,11 +236,11 @@
                                     </li>
                                 </ul>
                             </div>
-                            <div class="nav-item__ddc-list__wrap__sale"><a href="#" class="nav-item__ddc-list__wrap__sale__link"><img src="img/rectangle_23_1802.png" alt=""></a></div>
+                            <div class="nav-item__ddc-list__wrap__sale"><a href="#" class="nav-item__ddc-list__wrap__sale__link"><img src="img/sales_banner.png" alt=""></a></div>
                         </div>
                     </div>
                 </li>
-                <li class="nav-item nav-item__active">
+                <li class="nav-item">
                     <div class="nav-item__hover-wrap"><a href="Single%20Page.html" class="nav-link">Women</a>
                         <!-- <div class="nav-item__ddc"></div> -->
                     </div>
@@ -232,8 +279,13 @@
         </section>
         <section class="shopping-cart">
             <div class="shopping-cart-wrap wrap">
+                <!-- Replaced due to Lesson-07 task
                 <section>
-                    <div class="table">
+                -->
+                <details class="col detail-animo" id="StepOne" open>
+                    <summary>Cart Details</summary>
+
+                    <div id="cartBig" class="table">
                         <div class="table-header table-line">
                             <div class="table-line-item">Product Details</div>
                             <div class="table-line-item">unite Price</div>
@@ -242,10 +294,11 @@
                             <div class="table-line-item">Subtotal</div>
                             <div class="table-line-item">ACTION</div>
                         </div>
+                        <!-- Replaced by JavaScript
                         <div class="product-item table-line">
                             <div class="table-line__wrap">
                                 <div class="table-line-item table-line-item-prod">
-                                    <div class="col"><a href="" class="item-img"><img src="img/rectangle_26_2879.png" alt=""></a></div>
+                                    <div class="col"><a href="" class="item-img"><img src="img/catalog_item_15.png" alt=""></a></div>
                                     <div class="col">
                                         <h3>Mango People T-shirt</h3>
                                         <p><span class="item-title">
@@ -263,7 +316,7 @@
                         <div class="product-item table-line">
                             <div class="table-line__wrap">
                                 <div class="table-line-item table-line-item-prod">
-                                    <div class="col"><a href="" class="item-img"><img src="img/rectangle_26_2905.png" alt=""></a></div>
+                                    <div class="col"><a href="" class="item-img"><img src="img/catalog_item_16.png" alt=""></a></div>
                                     <div class="col">
                                         <h3>Mango People T-shirt</h3>
                                         <p><span class="item-title">
@@ -282,7 +335,7 @@
                         <div class="product-item table-line">
                             <div class="table-line__wrap">
                                 <div class="table-line-item table-line-item-prod">
-                                    <div class="col"><a href="" class="item-img"><img src="img/rectangle_26_2920.png" alt=""></a></div>
+                                    <div class="col"><a href="" class="item-img"><img src="img/catalog_item_17.png" alt=""></a></div>
                                     <div class="col">
                                         <h3>Mango People T-shirt</h3>
                                         <p><span class="item-title">
@@ -297,24 +350,35 @@
                                 <div class="table-line-item table-line-item-act"><a href="#"><i class="fa fa-times-circle"></i></a></div>
                             </div>
                         </div>
+                        -->
                         <div class="table-footer table-line">
                             <div class="col">
 
-                                <div class="btn-sqr_dl"><a href="" class="btn-sqr_dl__link"><span class="btn-sqr_dl__text">cLEAR SHOPPING CART</span></a>
+                                <div class="btn-sqr_dl"><a href="#" onclick="cart.clear();return false;" class="btn-sqr_dl__link"><span class="btn-sqr_dl__text">cLEAR SHOPPING CART</span></a>
                                 </div>
                             </div>
                             <div class="col">
-
+                                <!-- Replaced due to Lesson-07 task
                                 <div class="btn-sqr_dl"><a href="" class="btn-sqr_dl__link"><span class="btn-sqr_dl__text">cONTINUE sHOPPING</span></a>
+                                </div>                                
+                                -->
+                                <div class="btn-sqr_dl"><a href="#" onclick="go2StepTwo();return false;" class="btn-sqr_dl__link"><span class="btn-sqr_dl__text">Continue</span></a>
                                 </div>
                             </div>
                         </div>
                     </div>
+                    <!-- Replaced due to Lesson-07 task
                 </section>
+                -->
+                </details>
                 <section>
-                    <form action="#" class="form-shipping">
+                    <form id="form-shipping" action="#" class="form-shipping">
+                        <!-- Replaced due to Lesson-07 task
                         <div class="col">
                             <h3>Shipping Adress</h3>
+                        -->
+                        <details class="col detail-animo" id="StepTwo">
+                            <summary>Shipping Adress</summary>
                             <div class="select_wrap">
                                 <details class="cust-select">
                                     <summary><span></span><span>Bangladesh</span></summary>
@@ -328,24 +392,47 @@
                             </div>
                             <div class="splt-form splt-form-search"><input type="text" placeholder="State" name="search" class="splt-form-search-inp splt-form-search-borders splt-form-search-s2s"></div>
                             <div class="splt-form splt-form-search"><input type="text" placeholder="Postcode / Zip" name="search" class="splt-form-search-inp splt-form-search-borders splt-form-search-s2s"></div>
-
+                            <!-- Replaced due to Lesson-07 task
                             <div class="btn-sqr_dl"><a href="" class="btn-sqr_dl__link"><span class="btn-sqr_dl__text">get a quote</span></a>
                             </div>
+                            -->
+                            <div class="btn-sqr_dl"><a href="#" onclick="go2StepThree();return false;" class="btn-sqr_dl__link"><span class="btn-sqr_dl__text">Continue</span></a>
+                            </div>
+                            <!-- Replaced due to Lesson-07 task
                         </div>
+                        -->
+                        </details>
+                        <!-- Replaced due to Lesson-07 task
                         <div class="col">
                             <h3>coupon discount</h3>
+                        -->
+                        <details class="col detail-animo" id="StepThree">
+                            <summary>coupon discount</summary>
                             <div class="splt-form splt-form-search"><input type="text" placeholder="Coupon code" name="search" class="splt-form-search-inp splt-form-search-borders splt-form-search-s2s"></div>
-
+                            <!-- Replaced due to Lesson-07 task
                             <div class="btn-sqr_dl"><a href="" class="btn-sqr_dl__link"><span class="btn-sqr_dl__text">Apply coupon</span></a>
                             </div>
+                            -->
+                            <div class="btn-sqr_dl"><a href="#" onclick="go2StepFour();return false;" class="btn-sqr_dl__link"><span class="btn-sqr_dl__text">Continue</span></a>
+                            </div>
+                            <!-- Replaced due to Lesson-07 task
                         </div>
+                        -->
+                        </details>
+                        <!-- Replaced due to Lesson-07 task
                         <div class="col">
-                            <p class="total-sub">Sub total <span>$900</span></p>
-                            <p class="total-grand">GRAND TOTAL <span class="brand">$900</span></p>
+                           -->
+                        <details class="col detail-animo" id="StepFour">
+                            <summary>checkout</summary>
+                            <p class="total-sub">Sub total <span>$0</span></p>
+                            <p class="total-grand">GRAND TOTAL <span class="brand">$0</span></p>
 
                             <div class="btn-sqr_wb"><a href="" class="btn-sqr_wb__link"><span class="btn-sqr_wb__text">proceed to checkout</span></a>
                             </div>
+                            <!-- Replaced due to Lesson-07 task
                         </div>
+                        -->
+                        </details>
                     </form>
                 </section>
             </div>
@@ -359,7 +446,7 @@
                 <div class="cont">
                     <div class="col">
                         <div class="item">
-                            <img src="img/ellipse_3_2206.png" alt="">
+                            <img src="img/comment_ellipse.png" alt="">
                             <div class="cont">
                                 <p>“Vestibulum quis porttitor dui! Quisque viverra nunc mi,
                                     a pulvinar purus condimentum a. Aliquam condimentum mattis neque sed pretium”</p>
@@ -378,7 +465,7 @@
                                 <h3>Subscribe</h3>
                                 <p>FOR OUR NEWLETTER AND PROMOTION</p>
                                 <div class="btn-subs">
-                                    <form action="#" class="form-subs"><input name="subscribe" type="email" class="form-subs__input" placeholder="Enter Your Email"><a href="" class="form-subs__btn clear-fix">Subscribe</a></form>
+                                    <form action="#" class="form-subs"><input name="subscribe" type="email" class="form-subs__input" placeholder="Enter Your Email"><a href="#" class="form-subs__btn clear-fix">Subscribe</a></form>
                                 </div>
                             </div>
                         </div>
@@ -443,4 +530,6 @@
             </div>
         </section>
     </footer>
-</body></html>
+</body>
+
+</html>
